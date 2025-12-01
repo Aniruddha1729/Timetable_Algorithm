@@ -1,10 +1,31 @@
 {
-    "Prof1": ["DSA", "DSL"],
-    "Prof2": ["MA", "MAL"],
-    "Prof3": ["GenAI"],
-    "Prof4": ["UHV"],
-    "Prof5": ["Stats"],
-    "Prof6": ["Finance"],
-    "Prof7": ["BSE"],
-    "Prof8": ["DEVL"]
+    "SC": ["DSA", "DSL"],
+    "AM": ["DSA", "DSL"],
+    "AManna": ["DSA", "DSL"],
+    "AJ": ["DSA", "DSL"],
+
+    "PS": ["MA", "MAL"],
+    "DP": ["MA", "MAL"],
+    "NG": ["MA", "MAL"],
+
+    "MP": ["GenAI"],
+    "PP": ["GenAI"],
+    "YS": ["GenAI"],
+    "SI": ["GenAI"],
+
+    "MD": ["UHV"],
+    "SPatil": ["UHV"],
+
+    "NS": ["Stats"],
+    "SS": ["Stats"],
+    "SP": ["Stats"],
+
+    "TK": ["Kotlin"],
+    
+    "JL": ["BSE"],
+    "PRIYA": ["BSE"],
+    
+    "SG": ["DEVL"],
+    "KK": ["DEVL"],
+    "AR": ["DEVL"]
 }
