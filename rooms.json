@@ -1,0 +1,9 @@
+{
+    "Room101": ["DSA", "GenAI"],
+    "Room102": ["MA", "Stats"],
+    "Room103": ["Finance", "BSE"],
+    "Room104": ["UHV"],
+    "LabA": ["DSL"],
+    "LabB": ["DEVL"],
+    "LabC": ["MAL"]
+}

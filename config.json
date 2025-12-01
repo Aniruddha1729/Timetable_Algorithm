@@ -1,0 +1,10 @@
+{
+    "divisions": ["DivA", "DivB", "DivC", "DivD", "DivE"],
+    "lectures": ["DSA", "MA", "GenAI", "UHV", "Stats", "Finance", "BSE"],
+    "labs": ["DSL", "DEVL", "MAL"],
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "start_hour": 9,
+    "end_hour": 17,
+    "lunch_start_hour": 12
+}
+

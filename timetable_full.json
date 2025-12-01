@@ -1,0 +1,1062 @@
+{
+    "DivA": {
+        "Mon": [
+            {
+                "class": "UHV",
+                "teacher": "Prof4",
+                "room": "Room104"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "Finance",
+                "teacher": "Prof6",
+                "room": "Room103"
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Tue": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "BSE",
+                "teacher": "Prof7",
+                "room": "Room103"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Wed": [
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            }
+        ],
+        "Thu": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Fri": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            }
+        ]
+    },
+    "DivB": {
+        "Mon": [
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "UHV",
+                "teacher": "Prof4",
+                "room": "Room104"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            }
+        ],
+        "Tue": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            }
+        ],
+        "Wed": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "Finance",
+                "teacher": "Prof6",
+                "room": "Room103"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            }
+        ],
+        "Thu": [
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "BSE",
+                "teacher": "Prof7",
+                "room": "Room103"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            }
+        ],
+        "Fri": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            }
+        ]
+    },
+    "DivC": {
+        "Mon": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "UHV",
+                "teacher": "Prof4",
+                "room": "Room104"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Tue": [
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Wed": [
+            {
+                "class": "BSE",
+                "teacher": "Prof7",
+                "room": "Room103"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            }
+        ],
+        "Thu": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Fri": [
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Finance",
+                "teacher": "Prof6",
+                "room": "Room103"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            }
+        ]
+    },
+    "DivD": {
+        "Mon": [
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Finance",
+                "teacher": "Prof6",
+                "room": "Room103"
+            }
+        ],
+        "Tue": [
+            {
+                "class": "BSE",
+                "teacher": "Prof7",
+                "room": "Room103"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            }
+        ],
+        "Wed": [
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "UHV",
+                "teacher": "Prof4",
+                "room": "Room104"
+            }
+        ],
+        "Thu": [
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            }
+        ],
+        "Fri": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ]
+    },
+    "DivE": {
+        "Mon": [
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "BSE",
+                "teacher": "Prof7",
+                "room": "Room103"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "UHV",
+                "teacher": "Prof4",
+                "room": "Room104"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            }
+        ],
+        "Tue": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "DEVL",
+                "teacher": "Prof8",
+                "room": "LabB"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            }
+        ],
+        "Wed": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Finance",
+                "teacher": "Prof6",
+                "room": "Room103"
+            },
+            {
+                "class": "GenAI",
+                "teacher": "Prof3",
+                "room": "Room101"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ],
+        "Thu": [
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "MAL",
+                "teacher": "Prof2",
+                "room": "LabC"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "DSL",
+                "teacher": "Prof1",
+                "room": "LabA"
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "MA",
+                "teacher": "Prof2",
+                "room": "Room102"
+            }
+        ],
+        "Fri": [
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Stats",
+                "teacher": "Prof5",
+                "room": "Room102"
+            },
+            {
+                "class": "DSA",
+                "teacher": "Prof1",
+                "room": "Room101"
+            },
+            {
+                "class": "LUNCH",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            },
+            {
+                "class": "Free",
+                "teacher": "",
+                "room": ""
+            }
+        ]
+    }
+}
