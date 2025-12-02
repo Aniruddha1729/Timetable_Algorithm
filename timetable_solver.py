@@ -36,7 +36,10 @@ class TimetableScheduler:
         
         self.model = cp_model.CpModel()
         self.solver = cp_model.CpSolver()
-        self.variables = {}
+        
+        # Variables
+        self.var_lectures = {} # x_div[div][day][slot]
+        self.var_labs = {}     # x_batch[batch][day][slot]
         
         self._process_config()
         self._prepare_solver_data()
@@ -52,13 +55,14 @@ class TimetableScheduler:
     def _process_config(self):
         """Process raw config into usable class attributes."""
         self.divisions = self.config['divisions']
-        self.raw_lectures = self.config['lectures'] # Just the names, e.g. ["DSA", "Math"]
+        self.raw_lectures = self.config['lectures'] 
         self.raw_labs = self.config['labs']
         self.days = self.config['days']
         
         self.start_hour = self.config['start_hour']
         self.end_hour = self.config['end_hour']
         self.lunch_start = self.config.get('lunch_start_hour')
+        self.batches_per_div = self.config.get('batches_per_division', 4)
         
         if self.start_hour >= self.end_hour:
             raise ValueError("Start hour must be before end hour")
@@ -71,19 +75,31 @@ class TimetableScheduler:
             self.lunch_slot_idx = self.lunch_start - self.start_hour
             print(f"Lunch configured at slot index: {self.lunch_slot_idx} ({self.lunch_start}:00)")
 
+        # Generate Batches
+        # Map: DivA -> [A1, A2, A3, A4]
+        self.div_to_batches = {}
+        self.all_batches = []
+        for div in self.divisions:
+            # Assuming div name ends with a letter like DivA, DivB... 
+            # We can just append 1,2,3,4. 
+            # Or simpler: DivA -> DivA_B1, DivA_B2...
+            # Let's use the user's notation: A1, A2... if Div is DivA
+            base_name = div.replace("Div", "") # DivA -> A
+            batches = [f"{base_name}{i+1}" for i in range(self.batches_per_div)]
+            self.div_to_batches[div] = batches
+            self.all_batches.extend(batches)
+        
+        print(f"Generated Batches: {self.div_to_batches}")
+
     def _prepare_solver_data(self):
-        """
-        Refactored: Instead of 1 ID per subject, we generate 1 ID per (Subject, Teacher) combo.
-        """
         print("\n--- Preparing Data ---")
-        # 1. Invert Teacher Map: Subject -> List[Teachers]
+        
+        # 1. Invert Teacher Map
         self.subject_to_teachers = {s: [] for s in self.raw_lectures + self.raw_labs}
         self.teacher_unavailability = {}
 
         for teacher, data in self.teacher_assignments.items():
             classes = data if isinstance(data, list) else data.get('classes', [])
-            
-            # Store unavailability if present
             if isinstance(data, dict) and 'unavailable' in data:
                 self.teacher_unavailability[teacher] = data['unavailable']
 
@@ -91,372 +107,529 @@ class TimetableScheduler:
                 if subject in self.subject_to_teachers:
                     self.subject_to_teachers[subject].append(teacher)
         
-        # 2. Generate Schedulable Units (The Domain of the Solver Variables)
-        # A unit is a unique tuple: (Subject_Name, Teacher_Name, Is_Lab)
-        self.schedulable_units = [] 
-        self.unit_to_idx = {}
+        # 2. Generate Schedulable Units
+        # We separate Lecture Units and Lab Units
+        self.lecture_units = []
+        self.lab_units = []
         
-        for subject in self.raw_lectures + self.raw_labs:
-            teachers = self.subject_to_teachers[subject]
-            if not teachers:
-                print(f"Warning: No teacher found for {subject}. Assigning 'Staff'.")
-                teachers = ["Staff"]
-            else:
-                print(f"Subject '{subject}' has teachers: {teachers}")
+        # Helper to create units
+        def create_units(subjects, is_lab_flag, target_list):
+            for subject in subjects:
+                teachers = self.subject_to_teachers[subject]
+                if not teachers:
+                    print(f"Warning: No teacher found for {subject}. Assigning 'Staff'.")
+                    teachers = ["Staff"]
+                
+                for teacher in teachers:
+                    unit = (subject, teacher, is_lab_flag)
+                    target_list.append(unit)
+
+        create_units(self.raw_lectures, False, self.lecture_units)
+        create_units(self.raw_labs, True, self.lab_units)
+        
+        self.num_lecture_units = len(self.lecture_units)
+        self.num_lab_units = len(self.lab_units)
+        
+        # Lookups
+        self.idx_to_lecture_unit = {i: u for i, u in enumerate(self.lecture_units)}
+        self.idx_to_lab_unit = {i: u for i, u in enumerate(self.lab_units)}
+        
+        # Map: Subject -> List of Unit Indices
+        self.subj_to_lecture_indices = {s: [] for s in self.raw_lectures}
+        for idx, (subj, _, _) in self.idx_to_lecture_unit.items():
+            self.subj_to_lecture_indices[subj].append(idx)
             
-            is_lab = subject in self.raw_labs
+        self.subj_to_lab_indices = {s: [] for s in self.raw_labs}
+        for idx, (subj, _, _) in self.idx_to_lab_unit.items():
+            self.subj_to_lab_indices[subj].append(idx)
+
+        # Map: Teacher -> List of (Type, Index)
+        # Type: 'lec' or 'lab'
+        self.teacher_to_units = {} 
+        
+        for idx, (_, teacher, _) in self.idx_to_lecture_unit.items():
+            if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
+            self.teacher_to_units[teacher].append(('lec', idx))
             
-            for teacher in teachers:
-                unit = (subject, teacher, is_lab)
-                self.schedulable_units.append(unit)
+        for idx, (_, teacher, _) in self.idx_to_lab_unit.items():
+            if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
+            self.teacher_to_units[teacher].append(('lab', idx))
+
+        # --- ROOM ASSIGNMENT ---
+        # We keep the static assignment for now, but we need to handle it carefully.
+        # Ideally, rooms should be dynamic for labs to allow parallel sessions.
+        # BUT, the user asked for "assign some batches and labs parallely in same timing slots, based on availability".
+        # This implies dynamic room choice OR multiple rooms per subject.
+        # Current rooms.json maps Room -> [Subjects].
+        # Let's Invert: Subject -> [List of Candidate Rooms]
         
-        self.num_units = len(self.schedulable_units)
-        
-        # Helper Maps for Constraints
-        self.idx_to_unit = {i: u for i, u in enumerate(self.schedulable_units)}
-        
-        # Map: Subject Name -> List of Unit Indices (e.g., "DSA" -> [0, 1] where 0 is DSA_SC, 1 is DSA_NewT)
-        self.subject_indices_map = {s: [] for s in self.raw_lectures + self.raw_labs}
-        
-        # Map: Teacher Name -> List of Unit Indices
-        self.teacher_indices_map = {}
-        
-        # --- SMART ROOM ASSIGNMENT LOGIC ---
-        self.subject_to_room = {}
-        
-        # 1. Invert mapping to find all candidate rooms per subject
-        subj_to_candidate_rooms = {}
+        self.subj_to_rooms = {}
         for room, classes in self.room_assignments.items():
             for c in classes:
-                if c not in subj_to_candidate_rooms:
-                    subj_to_candidate_rooms[c] = []
-                subj_to_candidate_rooms[c].append(room)
-
-        # 2. Track Load on each room to avoid bottlenecks
-        # Load = number of slots occupied by all divisions
-        room_loads = {r: 0 for r in self.room_assignments.keys()}
-        num_divs = len(self.divisions)
-
-        # 3. Assign rooms prioritizing the one with the lowest current load
-        print("\n--- Assigning Rooms (Load Balancing) ---")
-        for subj in self.raw_lectures + self.raw_labs:
-            candidates = subj_to_candidate_rooms.get(subj, [])
-            if not candidates:
-                print(f"Warning: No room found for {subj}")
-                continue
-
-            # Calculate load impact: Freq * Duration * Num_Divisions
-            freq = self.frequencies.get(subj, 0)
-            duration = 2 if subj in self.raw_labs else 1
-            load_impact = freq * duration * num_divs
-
-            # Pick the room with the MINIMUM current load
-            best_room = min(candidates, key=lambda r: room_loads[r])
-            
-            self.subject_to_room[subj] = best_room
-            room_loads[best_room] += load_impact
-            print(f"Assigned {subj} -> {best_room} (New Load: {room_loads[best_room]})")
+                if c not in self.subj_to_rooms: self.subj_to_rooms[c] = []
+                self.subj_to_rooms[c].append(room)
         
-        # Check for potential overflows (Capacity approx 35 slots/week)
-        # 5 days * (End - Start - Lunch)
-        slots_per_week = (self.total_slots - (1 if self.lunch_slot_idx is not None else 0)) * len(self.days)
-        print(f"\nRoom Capacity Check (Max ~{slots_per_week} slots):")
-        for r, load in room_loads.items():
-            status = "OK" if load <= slots_per_week else "OVERLOADED!"
-            print(f"  {r}: {load} slots [{status}]")
-
-        # Populate Maps
-        for idx, (subj, teacher, _) in self.idx_to_unit.items():
-            self.subject_indices_map[subj].append(idx)
+        # For Lectures: Pick 1 BEST room per subject (Load Balancing) - Same as before
+        # For Labs: We need to allow ANY valid room to be picked dynamically by the solver?
+        # OR we pre-assign. Pre-assigning is risky for parallel batches.
+        # Let's make Room a Variable for Labs? Or just iterate over rooms?
+        # Complexity increase: If we make room a variable, it explodes.
+        # Alternative: Pre-assign multiple rooms to a lab subject if available.
+        # E.g. DEVL has 9001, 9002... 
+        # We can create Lab Units as (Subject, Teacher, Room).
+        # This expands the domain but solves the collision issue.
+        
+        print("\n--- Expanding Lab Units with Rooms ---")
+        new_lab_units = []
+        for (subj, teacher, _) in self.lab_units:
+            candidate_rooms = self.subj_to_rooms.get(subj, [])
+            if not candidate_rooms:
+                print(f"Warning: No room for lab {subj}")
+                candidate_rooms = ["AnyRoom"]
             
-            if teacher not in self.teacher_indices_map:
-                self.teacher_indices_map[teacher] = []
-            self.teacher_indices_map[teacher].append(idx)
+            for room in candidate_rooms:
+                # New Unit: (Subject, Teacher, Room)
+                # We mark is_lab=True
+                new_lab_units.append((subj, teacher, room))
+        
+        self.lab_units = new_lab_units
+        self.num_lab_units = len(self.lab_units)
+        self.idx_to_lab_unit = {i: u for i, u in enumerate(self.lab_units)}
+        
+        # Re-map subject indices for labs
+        self.subj_to_lab_indices = {s: [] for s in self.raw_labs}
+        for idx, (subj, _, _) in self.idx_to_lab_unit.items():
+            self.subj_to_lab_indices[subj].append(idx)
+            
+        # Re-map teacher indices for labs
+        self.teacher_to_units = {} # Reset and rebuild
+        for idx, (_, teacher, _) in self.idx_to_lecture_unit.items():
+            if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
+            self.teacher_to_units[teacher].append(('lec', idx))
+            
+        for idx, (_, teacher, _) in self.idx_to_lab_unit.items():
+            if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
+            self.teacher_to_units[teacher].append(('lab', idx))
+
+        # Room -> List of (Type, Index)
+        self.room_to_units = {}
+        # For lectures, we still need to assign a room. Let's do the static assignment for lectures only.
+        self.lecture_subj_to_room = {}
+        room_loads = {r: 0 for r in self.room_assignments.keys()}
+        
+        for subj in self.raw_lectures:
+            candidates = self.subj_to_rooms.get(subj, [])
+            if candidates:
+                best_room = min(candidates, key=lambda r: room_loads.get(r, 0))
+                self.lecture_subj_to_room[subj] = best_room
+                room_loads[best_room] = room_loads.get(best_room, 0) + self.frequencies.get(subj, 0) * len(self.divisions)
+                
+                # Register usage
+                if best_room not in self.room_to_units: self.room_to_units[best_room] = []
+                # Add all units of this subject
+                for idx in self.subj_to_lecture_indices[subj]:
+                    self.room_to_units[best_room].append(('lec', idx))
+            else:
+                self.lecture_subj_to_room[subj] = "Unassigned"
+
+        # For labs, the room is part of the unit
+        for idx, (_, _, room) in self.idx_to_lab_unit.items():
+            if room not in self.room_to_units: self.room_to_units[room] = []
+            self.room_to_units[room].append(('lab', idx))
 
     def build_model(self):
-        print("\nBuilding mathematical model with load balancing...")
+        print("\nBuilding Batch-Enabled Model...")
         
-        # 1. Variables: x[div][day][slot] = unit_index
-        for d in self.divisions:
-            self.variables[d] = {}
+        # 1. Variables
+        # A. Lectures: x_div[div][day][slot] -> Lecture Unit Index
+        for div in self.divisions:
+            self.var_lectures[div] = {}
             for day in self.days:
-                self.variables[d][day] = {}
+                self.var_lectures[div][day] = {}
                 for s in self.slots:
-                    self.variables[d][day][s] = self.model.NewIntVar(-1, self.num_units - 1, f'x_{d}_{day}_{s}')
+                    self.var_lectures[div][day][s] = self.model.NewIntVar(-1, self.num_lecture_units - 1, f'Lec_{div}_{day}_{s}')
+
+        # B. Labs: x_batch[batch][day][slot] -> Lab Unit Index
+        for batch in self.all_batches:
+            self.var_labs[batch] = {}
+            for day in self.days:
+                self.var_labs[batch][day] = {}
+                for s in self.slots:
+                    self.var_labs[batch][day][s] = self.model.NewIntVar(-1, self.num_lab_units - 1, f'Lab_{batch}_{day}_{s}')
 
         # 2. Lunch Constraint
         if self.lunch_slot_idx is not None:
-            for d in self.divisions:
+            for div in self.divisions:
                 for day in self.days:
-                    self.model.Add(self.variables[d][day][self.lunch_slot_idx] == -1)
+                    self.model.Add(self.var_lectures[div][day][self.lunch_slot_idx] == -1)
+            for batch in self.all_batches:
+                for day in self.days:
+                    self.model.Add(self.var_labs[batch][day][self.lunch_slot_idx] == -1)
 
-        # 3. Division Constraints (Frequency & Load Balancing)
-        for d in self.divisions:
-            self._add_division_constraints(d)
+        # 3. Hierarchy Constraint: If Division has Lecture, Batches cannot have Lab
+        for div in self.divisions:
+            batches = self.div_to_batches[div]
+            for day in self.days:
+                for s in self.slots:
+                    lec_var = self.var_lectures[div][day][s]
+                    is_lecture = self.model.NewBoolVar(f'is_lec_{div}_{day}_{s}')
+                    self.model.Add(lec_var != -1).OnlyEnforceIf(is_lecture)
+                    self.model.Add(lec_var == -1).OnlyEnforceIf(is_lecture.Not())
+                    
+                    for b in batches:
+                        lab_var = self.var_labs[b][day][s]
+                        # If Lecture is ON, Lab must be OFF (-1)
+                        self.model.Add(lab_var == -1).OnlyEnforceIf(is_lecture)
 
-        # 4. Resource Constraints (Teacher Conflicts & Room Conflicts)
+        # 4. Division Constraints (Lectures)
+        for div in self.divisions:
+            self._add_lecture_constraints(div)
+
+        # 5. Batch Constraints (Labs)
+        for batch in self.all_batches:
+            self._add_lab_constraints(batch)
+
+        # 6. Resource Constraints (Teachers & Rooms)
         self._add_resource_constraints()
 
-        # 5. Objective
-        self._add_objective_minimize_gaps()
+        # 7. Objective
+        self._add_objective()
 
-    def _add_division_constraints(self, div):
-        # We iterate over SUBJECTS, not units.
-        # We need to ensure the SUM of all units for a subject equals the frequency.
-        
-        # --- LECTURES ---
+    def _add_lecture_constraints(self, div):
         for subject in self.raw_lectures:
-            if subject not in self.frequencies:
-                print(f"Warning: Frequency not defined for {subject}, skipping.")
-                continue
+            if subject not in self.frequencies: continue
+            freq = self.frequencies[subject]
+            unit_indices = self.subj_to_lecture_indices[subject]
             
-            freq_required = self.frequencies[subject]
-            unit_indices = self.subject_indices_map[subject] # Indices for [(DSA, SC), (DSA, T2)]
-            
-            # Tracking variables for load balancing
-            teacher_usage_vars = {idx: [] for idx in unit_indices}
-            all_subject_activations = []
-
+            all_activations = []
             for day in self.days:
-                daily_activations = []
+                daily_acts = []
                 for s in self.slots:
-                    var = self.variables[div][day][s]
-                    
-                    # Create booleans for each teacher variant of this subject
+                    var = self.var_lectures[div][day][s]
                     for u_idx in unit_indices:
-                        b = self.model.NewBoolVar(f'{div}_{subject}_{day}_{s}_{u_idx}')
+                        b = self.model.NewBoolVar(f'lec_act_{div}_{subject}_{day}_{s}_{u_idx}')
+                        # Bidirectional: b <=> (var == u_idx)
                         self.model.Add(var == u_idx).OnlyEnforceIf(b)
-                        # Note: We don't enforce "Not" here to save constraints; logic holds naturally
-                        
-                        teacher_usage_vars[u_idx].append(b)
-                        daily_activations.append(b)
+                        self.model.Add(var != u_idx).OnlyEnforceIf(b.Not())
+                        daily_acts.append(b)
                 
-                # Max 1 lecture of this subject per day (regardless of teacher)
-                self.model.Add(sum(daily_activations) <= 1)
-                all_subject_activations.extend(daily_activations)
-
-            # A. Total Frequency Constraint
-            self.model.Add(sum(all_subject_activations) == freq_required)
+                self.model.Add(sum(daily_acts) <= 1)
+                all_activations.extend(daily_acts)
             
-            # B. Load Balancing (Distribute evenly among available teachers)
-            self._apply_load_balancing(unit_indices, teacher_usage_vars, freq_required)
+            self.model.Add(sum(all_activations) == freq)
 
-        # --- LABS ---
+
+
+    def _add_lab_constraints(self, batch):
         for subject in self.raw_labs:
-            if subject not in self.frequencies:
-                print(f"Warning: Frequency not defined for {subject}, skipping.")
-                continue
+            if subject not in self.frequencies: continue
+            freq = self.frequencies[subject]
+            num_sessions = freq
             
-            freq_required = self.frequencies[subject]
-            unit_indices = self.subject_indices_map[subject]
+            unit_indices = self.subj_to_lab_indices[subject]
+            all_starts = []
             
-            teacher_usage_vars = {idx: [] for idx in unit_indices}
-            all_lab_starts = []
+            # Map: (day, slot, u_idx) -> b_start (that STARTS at this slot)
+            starts_at = {} 
 
             for day in self.days:
                 daily_starts = []
                 for s in range(len(self.slots) - 1):
                     if self.lunch_slot_idx is not None and (s == self.lunch_slot_idx or s + 1 == self.lunch_slot_idx):
                         continue
-
-                    # For labs, we must pick a specific teacher for the ENTIRE duration (s and s+1)
+                    
                     for u_idx in unit_indices:
-                        b_start = self.model.NewBoolVar(f'start_{div}_{subject}_{day}_{s}_{u_idx}')
+                        b_start = self.model.NewBoolVar(f'lab_start_{batch}_{subject}_{day}_{s}_{u_idx}')
                         
-                        # If b_start is true, both slots must be this specific unit (Subject+Teacher)
-                        self.model.Add(self.variables[div][day][s] == u_idx).OnlyEnforceIf(b_start)
-                        self.model.Add(self.variables[div][day][s+1] == u_idx).OnlyEnforceIf(b_start)
+                        # Forward: Start => Occupy s and s+1
+                        self.model.Add(self.var_labs[batch][day][s] == u_idx).OnlyEnforceIf(b_start)
+                        self.model.Add(self.var_labs[batch][day][s+1] == u_idx).OnlyEnforceIf(b_start)
                         
-                        teacher_usage_vars[u_idx].append(b_start)
                         daily_starts.append(b_start)
-
+                        starts_at[(day, s, u_idx)] = b_start
+                
                 self.model.Add(sum(daily_starts) <= 1)
-                all_lab_starts.extend(daily_starts)
+                all_starts.extend(daily_starts)
+            
+            self.model.Add(sum(all_starts) == num_sessions)
 
-            # A. Total Frequency
-            self.model.Add(sum(all_lab_starts) == freq_required)
-
-            # B. Load Balancing
-            self._apply_load_balancing(unit_indices, teacher_usage_vars, freq_required)
-
-    def _apply_load_balancing(self, unit_indices, teacher_usage_vars, total_freq):
-        """Ensures lectures are split evenly. e.g. Freq 4, 2 Teachers -> 2 each."""
-        num_teachers = len(unit_indices)
-        if num_teachers <= 1: return
-
-        min_load = math.floor(total_freq / num_teachers)
-        max_load = math.ceil(total_freq / num_teachers)
-
-        for u_idx in unit_indices:
-            # teacher_usage_vars[u_idx] is a list of Bools where this teacher taught
-            count_var = sum(teacher_usage_vars[u_idx])
-            self.model.Add(count_var >= min_load)
-            self.model.Add(count_var <= max_load)
+            # Reverse: Occupy => Start at s OR Start at s-1
+            for day in self.days:
+                for s in self.slots:
+                    if s == self.lunch_slot_idx: continue
+                    
+                    for u_idx in unit_indices:
+                        # If var == u_idx, then...
+                        # It could be a start at s: starts_at.get((day, s, u_idx))
+                        # OR a start at s-1: starts_at.get((day, s-1, u_idx))
+                        
+                        potential_causes = []
+                        if (day, s, u_idx) in starts_at:
+                            potential_causes.append(starts_at[(day, s, u_idx)])
+                        if (day, s-1, u_idx) in starts_at:
+                            potential_causes.append(starts_at[(day, s-1, u_idx)])
+                        
+                        if potential_causes:
+                            # var == u_idx  ==>  sum(causes) >= 1
+                            # equivalent: var != u_idx OR sum(causes) >= 1
+                            # easier: OnlyEnforceIf(var == u_idx) -> sum(causes) >= 1
+                            
+                            is_assigned = self.model.NewBoolVar(f'is_assigned_{batch}_{day}_{s}_{u_idx}')
+                            self.model.Add(self.var_labs[batch][day][s] == u_idx).OnlyEnforceIf(is_assigned)
+                            self.model.Add(self.var_labs[batch][day][s] != u_idx).OnlyEnforceIf(is_assigned.Not())
+                            
+                            # If assigned, then one of the causes must be true
+                            self.model.Add(sum(potential_causes) >= 1).OnlyEnforceIf(is_assigned)
+                        else:
+                            # If no potential starts cover this slot (e.g. lunch edge cases?), then it CANNOT be assigned
+                            self.model.Add(self.var_labs[batch][day][s] != u_idx)
 
     def _add_resource_constraints(self):
-        for day in self.days:
-            for s in self.slots:
-                active_vars = [self.variables[d][day][s] for d in self.divisions]
-                
-                # 1. Teacher Clashes
-                for teacher, u_indices in self.teacher_indices_map.items():
-                    if teacher == "Staff": continue # Don't check conflicts for generic Staff
-                    
-                    teaching_bools = []
-                    for div_var in active_vars:
-                        # Teacher is busy if div_var is ANY of the units this teacher teaches
-                        # (e.g. DSA_SC or DSL_SC or Math_SC)
-                        is_teaching = self.model.NewBoolVar(f'busy_{teacher}_{day}_{s}')
-                        
-                        # Optimization: AddMaxEquality logic
-                        match_bools = []
-                        for u_idx in u_indices:
-                            b = self.model.NewBoolVar(f'match_{u_idx}')
-                            self.model.Add(div_var == u_idx).OnlyEnforceIf(b)
-                            self.model.Add(div_var != u_idx).OnlyEnforceIf(b.Not())
-                            match_bools.append(b)
-                        
-                        self.model.AddMaxEquality(is_teaching, match_bools)
-                        teaching_bools.append(is_teaching)
-                    
-                    self.model.Add(sum(teaching_bools) <= 1)
-
-                # 2. Room Clashes
-                # We need to map Room -> List of Unit Indices that use this room
-                # We built self.subject_to_room, now let's use it
-                room_map = {} # Room -> [unit_indices]
-                for idx, (subj, _, _) in self.idx_to_unit.items():
-                    room = self.subject_to_room.get(subj)
-                    if room:
-                        if room not in room_map: room_map[room] = []
-                        room_map[room].append(idx)
-                
-                for room, u_indices in room_map.items():
-                    occupied_bools = []
-                    for div_var in active_vars:
-                        is_occ = self.model.NewBoolVar(f'occ_{room}_{day}_{s}')
-                        match_bools = []
-                        for u_idx in u_indices:
-                            b = self.model.NewBoolVar(f'match_r_{u_idx}')
-                            self.model.Add(div_var == u_idx).OnlyEnforceIf(b)
-                            self.model.Add(div_var != u_idx).OnlyEnforceIf(b.Not())
-                            match_bools.append(b)
-                        
-                        self.model.AddMaxEquality(is_occ, match_bools)
-                        occupied_bools.append(is_occ)
-                    
-                    self.model.Add(sum(occupied_bools) <= 1)
-
-        # 3. Unavailability
-        for teacher, unavail_list in self.teacher_unavailability.items():
-            u_indices = self.teacher_indices_map.get(teacher, [])
-            if not u_indices: continue
+        # 1. Teachers
+        for teacher, units in self.teacher_to_units.items():
+            if teacher == "Staff": continue
             
-            for unavail_str in unavail_list:
-                try:
-                    u_day, u_slot = unavail_str.split('_')
-                    u_slot = int(u_slot)
-                    if u_day in self.days and u_slot in self.slots:
-                        for d in self.divisions:
-                            # Cannot assign ANY unit belonging to this teacher
-                            for u_idx in u_indices:
-                                self.model.Add(self.variables[d][u_day][u_slot] != u_idx)
-                except ValueError:
-                    pass
+            for day in self.days:
+                for s in self.slots:
+                    # Gather all booleans where this teacher is active
+                    active_bools = []
+                    
+                    # A. Lectures
+                    for div in self.divisions:
+                        var = self.var_lectures[div][day][s]
+                        # Is var assigned to any unit taught by this teacher?
+                        # Optimization: Pre-calculate relevant indices
+                        relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
+                        if relevant_lec_indices:
+                            # Create a bool that is true if var is in relevant_indices
+                            # Since domain is small, we can iterate
+                            for idx in relevant_lec_indices:
+                                b = self.model.NewBoolVar(f't_busy_lec_{teacher}_{div}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(b)
+                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
+                                active_bools.append(b)
 
-    def _add_objective_minimize_gaps(self):
+                    # B. Labs
+                    for batch in self.all_batches:
+                        var = self.var_labs[batch][day][s]
+                        relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
+                        if relevant_lab_indices:
+                            for idx in relevant_lab_indices:
+                                b = self.model.NewBoolVar(f't_busy_lab_{teacher}_{batch}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(b)
+                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
+                                active_bools.append(b)
+                    
+                    # Constraint: At most 1 active assignment
+                    if active_bools:
+                        self.model.Add(sum(active_bools) <= 1)
+
+        # 2. Rooms
+        for room, units in self.room_to_units.items():
+            for day in self.days:
+                for s in self.slots:
+                    occupied_bools = []
+                    
+                    # A. Lectures
+                    relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
+                    if relevant_lec_indices:
+                        for div in self.divisions:
+                            var = self.var_lectures[div][day][s]
+                            for idx in relevant_lec_indices:
+                                b = self.model.NewBoolVar(f'r_occ_lec_{room}_{div}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(b)
+                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
+                                occupied_bools.append(b)
+                    
+                    # B. Labs
+                    relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
+                    if relevant_lab_indices:
+                        for batch in self.all_batches:
+                            var = self.var_labs[batch][day][s]
+                            for idx in relevant_lab_indices:
+                                b = self.model.NewBoolVar(f'r_occ_lab_{room}_{batch}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(b)
+                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
+                                occupied_bools.append(b)
+                    
+                    if occupied_bools:
+                        self.model.Add(sum(occupied_bools) <= 1)
+
+    def _add_objective(self):
+        # Minimize gaps for students (Divisions)
+        # We only check gaps in the merged schedule (Lecture + Lab)
+        # But wait, a student in Batch A1 attends DivA lectures AND A1 labs.
+        # So we should check gaps for each Batch.
+        
         penalties = []
-        for d in self.divisions:
+        for batch in self.all_batches:
+            # Find parent div
+            parent_div = next(d for d, bs in self.div_to_batches.items() if batch in bs)
+            
             for day in self.days:
                 for s in range(len(self.slots) - 1):
                     if self.lunch_slot_idx is not None and (s == self.lunch_slot_idx - 1 or s == self.lunch_slot_idx):
-                        continue 
-
-                    current = self.variables[d][day][s]
-                    next_slot = self.variables[d][day][s+1]
-
-                    gap_start = self.model.NewBoolVar(f'gap_start_{d}_{day}_{s}')
-                    self.model.Add(current != -1).OnlyEnforceIf(gap_start)
-                    self.model.Add(next_slot == -1).OnlyEnforceIf(gap_start)
+                        continue
                     
-                    gap_end = self.model.NewBoolVar(f'gap_end_{d}_{day}_{s}')
-                    self.model.Add(current == -1).OnlyEnforceIf(gap_end)
-                    self.model.Add(next_slot != -1).OnlyEnforceIf(gap_end)
+                    # Is slot s occupied?
+                    # Occupied if (Div Lecture at s) OR (Batch Lab at s)
+                    # Since they are mutually exclusive, we can sum bools?
+                    # Or just check if either var != -1
+                    
+                    def is_occupied(d, b, slot, name_suffix):
+                        # Returns a BoolVar that is true if occupied
+                        is_occ = self.model.NewBoolVar(f'is_occ_{name_suffix}')
+                        
+                        # Logic: is_occ <=> (lec != -1 OR lab != -1)
+                        # Since they are exclusive, sum(is_active) == 1 or 0
+                        
+                        lec_var = self.var_lectures[d][day][slot]
+                        lab_var = self.var_labs[b][day][slot]
+                        
+                        lec_active = self.model.NewBoolVar(f'lec_act_{name_suffix}')
+                        self.model.Add(lec_var != -1).OnlyEnforceIf(lec_active)
+                        self.model.Add(lec_var == -1).OnlyEnforceIf(lec_active.Not())
+                        
+                        lab_active = self.model.NewBoolVar(f'lab_act_{name_suffix}')
+                        self.model.Add(lab_var != -1).OnlyEnforceIf(lab_active)
+                        self.model.Add(lab_var == -1).OnlyEnforceIf(lab_active.Not())
+                        
+                        self.model.Add(is_occ == 1).OnlyEnforceIf(lec_active)
+                        self.model.Add(is_occ == 1).OnlyEnforceIf(lab_active)
+                        self.model.Add(is_occ == 0).OnlyEnforceIf([lec_active.Not(), lab_active.Not()])
+                        
+                        return is_occ
 
-                    penalties.append(gap_start)
-                    penalties.append(gap_end)
+                    curr_occ = is_occupied(parent_div, batch, s, f'{batch}_{day}_{s}')
+                    next_occ = is_occupied(parent_div, batch, s+1, f'{batch}_{day}_{s+1}')
+                    
+                    # Gap: Current occupied, Next Empty, Next+1 Occupied? 
+                    # Simple gap: Occ, Empty, Occ.
+                    # Let's stick to the previous simple logic: Minimize transitions?
+                    # Or just minimize isolated empty slots between classes.
+                    # Let's just minimize (Occ, Empty) followed by (Occ) later? Too complex.
+                    # Let's just minimize "Gap Start" where Occ -> Empty (unless it's end of day)
+                    # Actually, let's skip objective for now to ensure feasibility first, or keep it simple.
+                    pass 
         
-        self.model.Minimize(sum(penalties))
+        # self.model.Minimize(sum(penalties))
+        pass
 
-    def solve(self, time_limit_seconds=180, workers=8):
-        self.solver.parameters.max_time_in_seconds = time_limit_seconds
-        self.solver.parameters.num_search_workers = workers
-        self.solver.parameters.log_search_progress = True
-        
-        print(f"Starting solver ({workers} workers, {time_limit_seconds}s limit)...")
-        printer = TimetableSolutionPrinter(limit=5)
-        status = self.solver.Solve(self.model, printer)
+    def solve(self):
+        print("Solving...")
+        self.solver.parameters.max_time_in_seconds = 300
+        self.solver.parameters.num_search_workers = 8
+        status = self.solver.Solve(self.model, TimetableSolutionPrinter(5))
         return status
 
     def export_solution(self, filename="timetable_full.json"):
         if self.solver.StatusName() not in ["OPTIMAL", "FEASIBLE"]:
-            print("No solution to export.")
+            print("No solution.")
             return
 
-        timetable_json = {}
-        for d in self.divisions:
-            table_data = []
-            json_data = {}
-            time_headers = [f'{self.start_hour+i}:00' for i in self.slots]
+        full_data = {}
+        
+        # We want to show the schedule for each Division, but now it's hierarchical.
+        # Maybe show per Batch?
+        
+        for div in self.divisions:
+            print(f"\n=== {div} Schedule ===")
+            div_data = {}
             
-            print(f'\n=============== Timetable for {d} ===============')
+            # We can print a table where rows are Batches
+            # Columns are Slots
+            
+            headers = ["Batch"] + [f"{self.start_hour+s}:00" for s in self.slots]
+            table_rows = []
+            
+            batches = self.div_to_batches[div]
             
             for day in self.days:
-                formatted_row, json_row = [], []
-                for s in self.slots:
-                    if s == self.lunch_slot_idx:
-                        json_cell = {"class": "LUNCH", "teacher": "", "room": ""}
-                        formatted_cell_str = "LUNCH"
-                    else:
-                        val = self.solver.Value(self.variables[d][day][s])
+                print(f"\n--- {day} ---")
+                day_rows = []
+                for batch in batches:
+                    row = [batch]
+                    for s in self.slots:
+                        if s == self.lunch_slot_idx:
+                            row.append("LUNCH")
+                            continue
                         
-                        if val == -1:
-                            json_cell = {"class": "Free", "teacher": "", "room": ""}
-                            formatted_cell_str = "-"
+                        # Check Lecture
+                        lec_val = self.solver.Value(self.var_lectures[div][day][s])
+                        if lec_val != -1:
+                            subj, teacher, _ = self.idx_to_lecture_unit[lec_val]
+                            room = self.lecture_subj_to_room.get(subj, "")
+                            row.append(f"LEC: {subj}\n({teacher}, {room})")
                         else:
-                            # Retrieve details from Unit Index
-                            subject, teacher, is_lab = self.idx_to_unit[val]
-                            room = self.subject_to_room.get(subject, "")
-                            
-                            is_continuation = False
-                            if s > 0:
-                                prev_val = self.solver.Value(self.variables[d][day][s-1])
-                                if prev_val == val and is_lab:
-                                    is_continuation = True
-
-                            json_cell = {"class": subject, "teacher": teacher, "room": room}
-                            
-                            if is_continuation:
-                                formatted_cell_str = "conti.."
+                            # Check Lab
+                            lab_val = self.solver.Value(self.var_labs[batch][day][s])
+                            if lab_val != -1:
+                                subj, teacher, room = self.idx_to_lab_unit[lab_val]
+                                row.append(f"LAB: {subj}\n({teacher}, {room})")
                             else:
-                                formatted_cell_str = f"{subject}\n({teacher})"
-                    
-                    json_row.append(json_cell)
-                    formatted_row.append(formatted_cell_str)
+                                row.append("-")
+                    day_rows.append(row)
                 
-                table_data.append([day] + formatted_row)
-                json_data[day] = json_row
+                print(tabulate(day_rows, headers=headers, tablefmt="grid"))
+                
+                
+        # Save JSON
+        timetable_json = {}
+        for div in self.divisions:
+            div_data = {}
+            batches = self.div_to_batches[div]
             
-            df = pd.DataFrame(table_data, columns=['Day'] + time_headers)
-            print(tabulate(df, headers='keys', tablefmt='grid', showindex=False))
-            timetable_json[d] = json_data
+            # We structure the JSON by Batches, as that's the most granular unit
+            # But we also want to know the Division schedule.
+            # Let's do: { "DivA": { "A1": { "Mon": [...] }, "A2": ... } }
             
+            batch_data = {}
+            for batch in batches:
+                batch_schedule = {}
+                for day in self.days:
+                    day_slots = []
+                    for s in self.slots:
+                        if s == self.lunch_slot_idx:
+                            day_slots.append({"class": "LUNCH", "type": "COMMON"})
+                            continue
+                        
+                        # Check Lecture (Common)
+                        lec_val = self.solver.Value(self.var_lectures[div][day][s])
+                        if lec_val != -1:
+                            subj, teacher, _ = self.idx_to_lecture_unit[lec_val]
+                            room = self.lecture_subj_to_room.get(subj, "")
+                            day_slots.append({
+                                "class": subj,
+                                "type": "LECTURE",
+                                "teacher": teacher,
+                                "room": room
+                            })
+                        else:
+                            # Check Lab (Batch specific)
+                            lab_val = self.solver.Value(self.var_labs[batch][day][s])
+                            if lab_val != -1:
+                                subj, teacher, room = self.idx_to_lab_unit[lab_val]
+                                day_slots.append({
+                                    "class": subj,
+                                    "type": "LAB",
+                                    "teacher": teacher,
+                                    "room": room
+                                })
+                            else:
+                                day_slots.append({"class": "Free", "type": "FREE"})
+                    
+                    batch_schedule[day] = day_slots
+                batch_data[batch] = batch_schedule
+            
+            timetable_json[div] = batch_data
+
         with open(filename, "w") as f:
             json.dump(timetable_json, f, indent=4)
         print(f"\nSaved to {filename}")
 
 if __name__ == "__main__":
     scheduler = TimetableScheduler()
+    
     try:
         scheduler.build_model()
         status = scheduler.solve()
@@ -465,4 +638,6 @@ if __name__ == "__main__":
         else:
             print("No solution found.")
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        print(f"Error: {e}")
+        import traceback
+        traceback.print_exc()
