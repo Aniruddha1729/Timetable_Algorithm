@@ -11,7 +11,7 @@ with open('frequencies.json', 'r') as f:
 with open('config.json', 'r') as f:
     config = json.load(f)
     lecture_subjects = set(config.get('lectures', []))
-
+ 
 output_file = 'verify_lectures_output.txt'
 with open(output_file, 'w') as f:
     print("Lecture Frequency Verification:", file=f)

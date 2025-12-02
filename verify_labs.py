@@ -15,7 +15,7 @@ with open(output_file, 'w') as f:
             mal_count = 0
             devl_count = 0
             
-            dsl_slots = []
+            dsl_slots = [] 
             mal_slots = []
             devl_slots = []
             

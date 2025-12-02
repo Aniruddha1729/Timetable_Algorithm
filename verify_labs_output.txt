@@ -10,7 +10,7 @@ A2         DSL        4          Tue Slot 7, Tue Slot 8, Thu Slot 7, Thu Slot 8
 A2         DEVL       4          Wed Slot 5, Wed Slot 6, Fri Slot 5, Fri Slot 6
 A2         MAL        2          Thu Slot 5, Thu Slot 6
 --------------------------------------------------
-A3         DSL        4          Thu Slot 7, Thu Slot 8, Fri Slot 2, Fri Slot 3
+A3         DSL        4          Thu Slot 7, Thu Slot 8, Fri Slot 2, Fri Slot 3 
 A3         DEVL       4          Wed Slot 5, Wed Slot 6, Thu Slot 5, Thu Slot 6
 A3         MAL        2          Tue Slot 5, Tue Slot 6
 --------------------------------------------------
