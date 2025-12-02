@@ -1,0 +1,80 @@
+
+DivA Analysis:
+Batch      Subject    Count      Slots
+--------------------------------------------------
+A1         DSL        4          Wed Slot 5, Wed Slot 6, Fri Slot 7, Fri Slot 8
+A1         DEVL       4          Tue Slot 5, Tue Slot 6, Thu Slot 7, Thu Slot 8
+A1         MAL        2          Fri Slot 2, Fri Slot 3
+--------------------------------------------------
+A2         DSL        4          Tue Slot 7, Tue Slot 8, Thu Slot 7, Thu Slot 8
+A2         DEVL       4          Wed Slot 5, Wed Slot 6, Fri Slot 5, Fri Slot 6
+A2         MAL        2          Thu Slot 5, Thu Slot 6
+--------------------------------------------------
+A3         DSL        4          Thu Slot 7, Thu Slot 8, Fri Slot 2, Fri Slot 3 
+A3         DEVL       4          Wed Slot 5, Wed Slot 6, Thu Slot 5, Thu Slot 6
+A3         MAL        2          Tue Slot 5, Tue Slot 6
+--------------------------------------------------
+A4         DSL        4          Thu Slot 7, Thu Slot 8, Fri Slot 5, Fri Slot 6
+A4         DEVL       4          Tue Slot 5, Tue Slot 6, Fri Slot 2, Fri Slot 3
+A4         MAL        2          Fri Slot 7, Fri Slot 8
+--------------------------------------------------
+
+DivB Analysis:
+Batch      Subject    Count      Slots
+--------------------------------------------------
+B1         DSL        4          Tue Slot 2, Tue Slot 3, Wed Slot 2, Wed Slot 3
+B1         DEVL       4          Tue Slot 7, Tue Slot 8, Fri Slot 5, Fri Slot 6
+B1         MAL        2          Mon Slot 5, Mon Slot 6
+--------------------------------------------------
+B2         DSL        4          Mon Slot 5, Mon Slot 6, Wed Slot 7, Wed Slot 8
+B2         DEVL       4          Tue Slot 7, Tue Slot 8, Wed Slot 2, Wed Slot 3
+B2         MAL        2          Tue Slot 2, Tue Slot 3
+--------------------------------------------------
+B3         DSL        4          Tue Slot 7, Tue Slot 8, Fri Slot 5, Fri Slot 6
+B3         DEVL       4          Tue Slot 2, Tue Slot 3, Thu Slot 7, Thu Slot 8
+B3         MAL        2          Thu Slot 2, Thu Slot 3
+--------------------------------------------------
+B4         DSL        4          Mon Slot 5, Mon Slot 6, Wed Slot 7, Wed Slot 8
+B4         DEVL       4          Tue Slot 2, Tue Slot 3, Fri Slot 2, Fri Slot 3
+B4         MAL        2          Fri Slot 5, Fri Slot 6
+--------------------------------------------------
+
+DivC Analysis:
+Batch      Subject    Count      Slots
+--------------------------------------------------
+C1         DSL        4          Mon Slot 5, Mon Slot 6, Fri Slot 2, Fri Slot 3
+C1         DEVL       4          Mon Slot 2, Mon Slot 3, Thu Slot 2, Thu Slot 3
+C1         MAL        2          Mon Slot 7, Mon Slot 8
+--------------------------------------------------
+C2         DSL        4          Mon Slot 7, Mon Slot 8, Thu Slot 1, Thu Slot 2
+C2         DEVL       4          Mon Slot 5, Mon Slot 6, Wed Slot 1, Wed Slot 2
+C2         MAL        2          Mon Slot 2, Mon Slot 3
+--------------------------------------------------
+C3         DSL        4          Mon Slot 7, Mon Slot 8, Tue Slot 7, Tue Slot 8
+C3         DEVL       4          Thu Slot 2, Thu Slot 3, Fri Slot 5, Fri Slot 6
+C3         MAL        2          Mon Slot 2, Mon Slot 3
+--------------------------------------------------
+C4         DSL        4          Mon Slot 7, Mon Slot 8, Fri Slot 5, Fri Slot 6
+C4         DEVL       4          Mon Slot 2, Mon Slot 3, Thu Slot 1, Thu Slot 2
+C4         MAL        2          Wed Slot 1, Wed Slot 2
+--------------------------------------------------
+
+DivD Analysis:
+Batch      Subject    Count      Slots
+--------------------------------------------------
+D1         DSL        4          Mon Slot 2, Mon Slot 3, Thu Slot 5, Thu Slot 6
+D1         DEVL       4          Wed Slot 7, Wed Slot 8, Fri Slot 7, Fri Slot 8
+D1         MAL        2          Wed Slot 5, Wed Slot 6
+--------------------------------------------------
+D2         DSL        4          Wed Slot 5, Wed Slot 6, Fri Slot 2, Fri Slot 3
+D2         DEVL       4          Thu Slot 5, Thu Slot 6, Fri Slot 7, Fri Slot 8
+D2         MAL        2          Mon Slot 1, Mon Slot 2
+--------------------------------------------------
+D3         DSL        4          Mon Slot 2, Mon Slot 3, Fri Slot 1, Fri Slot 2
+D3         DEVL       4          Tue Slot 1, Tue Slot 2, Fri Slot 7, Fri Slot 8
+D3         MAL        2          Tue Slot 5, Tue Slot 6
+--------------------------------------------------
+D4         DSL        4          Thu Slot 5, Thu Slot 6, Fri Slot 7, Fri Slot 8
+D4         DEVL       4          Mon Slot 1, Mon Slot 2, Wed Slot 1, Wed Slot 2
+D4         MAL        2          Fri Slot 1, Fri Slot 2
+--------------------------------------------------

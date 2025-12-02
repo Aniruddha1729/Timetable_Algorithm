@@ -1,9 +1,25 @@
 {
-    "Room101": ["DSA", "GenAI"],
-    "Room102": ["MA", "Stats"],
-    "Room103": ["Finance", "BSE"],
-    "Room104": ["UHV"],
-    "LabA": ["DSL"],
-    "LabB": ["DEVL"],
-    "LabC": ["MAL"]
+    "6102": ["DSA", "MA","BSE","UHV"],
+    "6203": ["DSA", "MA","BSE","UHV","Stats"],
+
+
+    "6405":  ["Stats"],
+
+    "6304": ["Kotlin"],
+
+    "6222": ["DSL"],
+    "6005": ["DSL"],
+    "6104": ["DSL"],
+    "6206": ["DSL","MAL"],
+
+    "9001": ["DEVL"],
+    "9002": ["DEVL"],
+    "9004": ["DEVL"],
+    "9005": ["DEVL"],
+
+    "6218": ["MAL"],
+    "6219": ["MAL"],
+
+    "6309": ["GenAI"],
+    "5209": ["GenAI"]
 }

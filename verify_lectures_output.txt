@@ -1,0 +1,35 @@
+Lecture Frequency Verification:
+Division   Subject    Expected   Actual     Status
+------------------------------------------------------------
+DivA       BSE        2          2          OK
+DivA       MA         2          2          OK
+DivA       GenAI      2          2          OK
+DivA       UHV        2          2          OK
+DivA       DSA        3          3          OK
+DivA       Kotlin     2          2          OK
+DivA       Stats      2          2          OK
+------------------------------------------------------------
+DivB       BSE        2          2          OK
+DivB       MA         2          2          OK
+DivB       GenAI      2          2          OK 
+DivB       UHV        2          2          OK
+DivB       DSA        3          3          OK
+DivB       Kotlin     2          2          OK
+DivB       Stats      2          2          OK
+------------------------------------------------------------
+DivC       BSE        2          2          OK
+DivC       MA         2          2          OK
+DivC       GenAI      2          2          OK
+DivC       UHV        2          2          OK
+DivC       DSA        3          3          OK
+DivC       Kotlin     2          2          OK
+DivC       Stats      2          2          OK
+------------------------------------------------------------
+DivD       BSE        2          2          OK
+DivD       MA         2          2          OK
+DivD       GenAI      2          2          OK
+DivD       UHV        2          2          OK
+DivD       DSA        3          3          OK
+DivD       Kotlin     2          2          OK
+DivD       Stats      2          2          OK
+------------------------------------------------------------
