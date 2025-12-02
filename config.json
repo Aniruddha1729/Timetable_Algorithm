@@ -1,10 +1,33 @@
 {
-    "divisions": ["DivA", "DivB", "DivC", "DivD", "DivE"],
-    "lectures": ["DSA", "MA", "GenAI", "UHV", "Stats", "Finance", "BSE"],
-    "labs": ["DSL", "DEVL", "MAL"],
-    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "divisions": [
+        "DivA",
+        "DivB",
+        "DivC",
+        "DivD"
+    ],
+    "lectures": [
+        "DSA",
+        "MA",
+        "GenAI",
+        "UHV",
+        "Stats",
+        "Kotlin",
+        "BSE"
+    ],
+    "labs": [
+        "DSL",
+        "DEVL",
+        "MAL"
+    ],
+    "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+    ],
     "start_hour": 9,
     "end_hour": 17,
-    "lunch_start_hour": 12
+    "lunch_start_hour": 12,
+    "batches_per_division": 4
 }
-
