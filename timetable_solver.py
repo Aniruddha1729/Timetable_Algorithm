@@ -292,7 +292,10 @@ class TimetableScheduler:
         # 6. Resource Constraints (Teachers & Rooms)
         self._add_resource_constraints()
 
-        # 7. Objective
+        # 7. Synchronization Constraints
+        self._add_lab_synchronization()
+
+        # 8. Objective
         self._add_objective()
 
     def _add_lecture_constraints(self, div):
@@ -455,6 +458,71 @@ class TimetableScheduler:
                     if occupied_bools:
                         self.model.Add(sum(occupied_bools) <= 1)
 
+    def _add_lab_synchronization(self):
+        """
+        Ensure that for a given Division and Day, if multiple batches have labs,
+        they all start at the same time slot.
+        """
+        print("Adding Lab Synchronization Constraints (Fixed)...")
+        for div in self.divisions:
+            batches = self.div_to_batches[div]
+            
+            for day in self.days:
+                # Create boolean variables for "Division starts lab at slot s"
+                div_starts = []
+                for s in self.slots:
+                    div_starts.append(self.model.NewBoolVar(f'div_lab_start_{div}_{day}_{s}'))
+                
+                # Collect all batch start vars for each slot
+                batch_starts_by_slot = {s: [] for s in self.slots}
+
+                for batch in batches:
+                    # Create is_active vars
+                    is_active = [] 
+                    for s in self.slots:
+                        b_act = self.model.NewBoolVar(f'b_act_{batch}_{day}_{s}')
+                        var = self.var_labs[batch][day][s]
+                        self.model.Add(var != -1).OnlyEnforceIf(b_act)
+                        self.model.Add(var == -1).OnlyEnforceIf(b_act.Not())
+                        is_active.append(b_act)
+                    
+                    for s in self.slots:
+                        if s == self.lunch_slot_idx: continue
+                        
+                        b_start = self.model.NewBoolVar(f'b_start_{batch}_{day}_{s}')
+                        
+                        # Bidirectional binding: b_start <=> (Active[s] AND !Active[s-1])
+                        
+                        # 1. If Active[s] is False -> b_start is False
+                        self.model.Add(b_start == 0).OnlyEnforceIf(is_active[s].Not())
+                        
+                        # 2. If Active[s-1] is True -> b_start is False (Continuation)
+                        if s > 0:
+                            self.model.Add(b_start == 0).OnlyEnforceIf(is_active[s-1])
+                        
+                        # 3. If (Active[s] AND !Active[s-1]) -> b_start is True
+                        conditions = [is_active[s]]
+                        if s > 0:
+                            conditions.append(is_active[s-1].Not())
+                        self.model.Add(b_start == 1).OnlyEnforceIf(conditions)
+                        
+                        batch_starts_by_slot[s].append(b_start)
+
+                # Link Batch Starts to Division Starts
+                # div_starts[s] <=> max(batch_starts_by_slot[s])
+                for s in self.slots:
+                    if batch_starts_by_slot[s]:
+                        self.model.AddMaxEquality(div_starts[s], batch_starts_by_slot[s])
+                    else:
+                        self.model.Add(div_starts[s] == 0)
+
+                # Constraint: Prevent Staggered Starts
+                # We cannot have a start at s and a start at s+1
+                # This prevents 9-11 and 10-12 overlaps
+                for s in range(len(self.slots) - 1):
+                    # If div starts at s, it cannot start at s+1
+                    self.model.Add(div_starts[s] + div_starts[s+1] <= 1)
+
     def _add_objective(self):
         # Minimize gaps for students (Divisions)
         # We only check gaps in the merged schedule (Lecture + Lab)
@@ -533,7 +601,7 @@ class TimetableScheduler:
         # Maybe show per Batch?
         
         for div in self.divisions:
-            print(f"\n=== {div} Schedule ===")
+            # print(f"\n=== {div} Schedule ===")
             div_data = {}
             
             # We can print a table where rows are Batches
@@ -544,9 +612,11 @@ class TimetableScheduler:
             
             batches = self.div_to_batches[div]
             
+            """
             for day in self.days:
                 print(f"\n--- {day} ---")
                 day_rows = []
+                
                 for batch in batches:
                     row = [batch]
                     for s in self.slots:
@@ -571,6 +641,7 @@ class TimetableScheduler:
                     day_rows.append(row)
                 
                 print(tabulate(day_rows, headers=headers, tablefmt="grid"))
+                """
                 
                 
         # Save JSON
