@@ -1,12 +1,12 @@
 {
-    "DSA": 3,
-    "MA": 2,
-    "GenAI": 2,
-    "UHV": 2,
-    "Stats": 2,
-    "Kotlin": 2,
-    "BSE": 2,
-    "DSL": 2,
-    "DEVL": 2,
-    "MAL": 1
+  "BSFE": 2,
+  "DEVL": 2,
+  "DSA": 3,
+  "DSAL": 2,
+  "GenAI": 2,
+  "Kotlin": 2,
+  "MA": 2,
+  "MAL": 1,
+  "SDAUR": 2,
+  "UHV": 2
 }

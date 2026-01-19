@@ -1,31 +1,75 @@
 {
-    "SC": ["DSA", "DSL"],
-    "AM": ["DSA", "DSL"],
-    "AManna": ["DSA", "DSL"],
-    "AJ": ["DSA", "DSL"],
-
-    "PS": ["MA", "MAL"],
-    "DP": ["MA", "MAL"],
-    "NG": ["MA", "MAL"],
-
-    "MP": ["GenAI"],
-    "PP": ["GenAI"],
-    "YS": ["GenAI"],
-    "SI": ["GenAI"],
-
-    "MD": ["UHV"],
-    "SPatil": ["UHV"],
-
-    "NS": ["Stats"],
-    "SS": ["Stats"],
-    "SP": ["Stats"],
-
-    "TK": ["Kotlin"],
-    
-    "JL": ["BSE"],
-    "PRIYA": ["BSE"],
-    
-    "SG": ["DEVL"],
-    "KK": ["DEVL"],
-    "AR": ["DEVL"]
+  "Abhishek Raut": [
+    "DEVL"
+  ],
+  "Aparna Joshi": [
+    "DSA",
+    "DSAL"
+  ],
+  "Ashwini Matange": [
+    "DSA",
+    "DSAL"
+  ],
+  "Asmita Manna": [
+    "DSA",
+    "DSAL"
+  ],
+  "Dhanashree Patil": [
+    "MA",
+    "MAL"
+  ],
+  "Jayashri Lohar": [
+    "BSFE"
+  ],
+  "Kavita Kolpe": [
+    "DEVL"
+  ],
+  "Madhuri Suryavanshi": [
+    "GenAI"
+  ],
+  "Manjusha Devkute": [
+    "UHV"
+  ],
+  "NG": [
+    "MA",
+    "MAL"
+  ],
+  "Neha Sharma": [
+    "SDAUR"
+  ],
+  "PS": [
+    "MA",
+    "MAL"
+  ],
+  "Priyadarshani Ranbhise": [
+    "BSFE"
+  ],
+  "Puja Pohakar": [
+    "GenAI"
+  ],
+  "SI": [
+    "GenAI"
+  ],
+  "Saziya Sheikh": [
+    "SDAUR"
+  ],
+  "Sonika Gill": [
+    "DEVL"
+  ],
+  "Spatil": [
+    "UHV"
+  ],
+  "Sushma Parmar": [
+    "SDAUR"
+  ],
+  "Swati Chandurkar": [
+    "DSA",
+    "DSAL"
+  ],
+  "Tushar Kute": [
+    "Kotlin"
+  ],
+  "YS": [
+    "GenAI"
+  ]
 }

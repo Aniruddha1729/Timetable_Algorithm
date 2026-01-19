@@ -196,12 +196,14 @@ class TimetableScheduler:
         self.num_lab_units = len(self.lab_units)
         self.idx_to_lab_unit = {i: u for i, u in enumerate(self.lab_units)}
         
-        # Re-map subject indices for labs
+        # Re-map subject indices for labs4
+        print("Re-mapping Lab Unit Indices...")
         self.subj_to_lab_indices = {s: [] for s in self.raw_labs}
         for idx, (subj, _, _) in self.idx_to_lab_unit.items():
             self.subj_to_lab_indices[subj].append(idx)
             
         # Re-map teacher indices for labs
+        print("Re-mapping Teacher to Units...")
         self.teacher_to_units = {} # Reset and rebuild
         for idx, (_, teacher, _) in self.idx_to_lecture_unit.items():
             if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
@@ -233,6 +235,7 @@ class TimetableScheduler:
                 self.lecture_subj_to_room[subj] = "Unassigned"
 
         # For labs, the room is part of the unit
+        print("Mapping Rooms to Lab Units...")
         for idx, (_, _, room) in self.idx_to_lab_unit.items():
             if room not in self.room_to_units: self.room_to_units[room] = []
             self.room_to_units[room].append(('lab', idx))
@@ -250,6 +253,7 @@ class TimetableScheduler:
                     self.var_lectures[div][day][s] = self.model.NewIntVar(-1, self.num_lecture_units - 1, f'Lec_{div}_{day}_{s}')
 
         # B. Labs: x_batch[batch][day][slot] -> Lab Unit Index
+        print("Creating Lab Variables...")
         for batch in self.all_batches:
             self.var_labs[batch] = {}
             for day in self.days:
@@ -258,6 +262,7 @@ class TimetableScheduler:
                     self.var_labs[batch][day][s] = self.model.NewIntVar(-1, self.num_lab_units - 1, f'Lab_{batch}_{day}_{s}')
 
         # 2. Lunch Constraint
+        print("Adding Lunch Constraints...")
         if self.lunch_slot_idx is not None:
             for div in self.divisions:
                 for day in self.days:
@@ -267,6 +272,7 @@ class TimetableScheduler:
                     self.model.Add(self.var_labs[batch][day][self.lunch_slot_idx] == -1)
 
         # 3. Hierarchy Constraint: If Division has Lecture, Batches cannot have Lab
+        print("Adding Hierarchy Constraints...")
         for div in self.divisions:
             batches = self.div_to_batches[div]
             for day in self.days:
@@ -282,20 +288,25 @@ class TimetableScheduler:
                         self.model.Add(lab_var == -1).OnlyEnforceIf(is_lecture)
 
         # 4. Division Constraints (Lectures)
+        print("Adding Lecture Constraints...")
         for div in self.divisions:
             self._add_lecture_constraints(div)
 
         # 5. Batch Constraints (Labs)
+        print("Adding Lab Constraints...")
         for batch in self.all_batches:
             self._add_lab_constraints(batch)
 
         # 6. Resource Constraints (Teachers & Rooms)
+        print("Adding Resource Constraints...")
         self._add_resource_constraints()
 
         # 7. Synchronization Constraints
+        print("Adding Lab Synchronization Constraints...")
         self._add_lab_synchronization()
 
         # 8. Objective
+        print("Adding Objective...")
         self._add_objective()
 
     def _add_lecture_constraints(self, div):
@@ -700,7 +711,8 @@ class TimetableScheduler:
 
 if __name__ == "__main__":
     scheduler = TimetableScheduler()
-    
+    print("hello")
+    print(type(scheduler))
     try:
         scheduler.build_model()
         status = scheduler.solve()
