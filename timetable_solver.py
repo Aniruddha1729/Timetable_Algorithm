@@ -36,6 +36,7 @@ class TimetableScheduler:
         
         self.model = cp_model.CpModel()
         self.solver = cp_model.CpSolver()
+        self.solve_status = None  # Store the solve status
         
         # Variables
         self.var_lectures = {} # x_div[div][day][slot]
@@ -315,16 +316,42 @@ class TimetableScheduler:
             freq = self.frequencies[subject]
             unit_indices = self.subj_to_lecture_indices[subject]
             
+            # Group unit indices by teacher to ensure one teacher per division-subject
+            teacher_to_unit_indices = {}
+            for u_idx in unit_indices:
+                _, teacher, _ = self.idx_to_lecture_unit[u_idx]
+                if teacher not in teacher_to_unit_indices:
+                    teacher_to_unit_indices[teacher] = []
+                teacher_to_unit_indices[teacher].append(u_idx)
+            
+            # Create boolean variable for each teacher: is this teacher selected for this div-subject?
+            teacher_selected = {}
+            for teacher in teacher_to_unit_indices.keys():
+                teacher_selected[teacher] = self.model.NewBoolVar(f'teacher_sel_{div}_{subject}_{teacher}')
+            
+            # Constraint: Exactly one teacher must be selected for this division-subject pair
+            if len(teacher_selected) > 1:
+                self.model.Add(sum(teacher_selected.values()) == 1)
+            elif len(teacher_selected) == 1:
+                # Only one teacher available, must be selected
+                self.model.Add(list(teacher_selected.values())[0] == 1)
+            
             all_activations = []
             for day in self.days:
                 daily_acts = []
                 for s in self.slots:
                     var = self.var_lectures[div][day][s]
                     for u_idx in unit_indices:
+                        _, teacher, _ = self.idx_to_lecture_unit[u_idx]
                         b = self.model.NewBoolVar(f'lec_act_{div}_{subject}_{day}_{s}_{u_idx}')
                         # Bidirectional: b <=> (var == u_idx)
                         self.model.Add(var == u_idx).OnlyEnforceIf(b)
                         self.model.Add(var != u_idx).OnlyEnforceIf(b.Not())
+                        
+                        # Only allow this unit if its teacher is selected
+                        if teacher in teacher_selected:
+                            self.model.Add(b == 0).OnlyEnforceIf(teacher_selected[teacher].Not())
+                        
                         daily_acts.append(b)
                 
                 self.model.Add(sum(daily_acts) <= 1)
@@ -341,6 +368,27 @@ class TimetableScheduler:
             num_sessions = freq
             
             unit_indices = self.subj_to_lab_indices[subject]
+            
+            # Group unit indices by teacher to ensure one teacher per batch-subject
+            teacher_to_unit_indices = {}
+            for u_idx in unit_indices:
+                _, teacher, _ = self.idx_to_lab_unit[u_idx]
+                if teacher not in teacher_to_unit_indices:
+                    teacher_to_unit_indices[teacher] = []
+                teacher_to_unit_indices[teacher].append(u_idx)
+            
+            # Create boolean variable for each teacher: is this teacher selected for this batch-subject?
+            teacher_selected = {}
+            for teacher in teacher_to_unit_indices.keys():
+                teacher_selected[teacher] = self.model.NewBoolVar(f'lab_teacher_sel_{batch}_{subject}_{teacher}')
+            
+            # Constraint: Exactly one teacher must be selected for this batch-subject pair
+            if len(teacher_selected) > 1:
+                self.model.Add(sum(teacher_selected.values()) == 1)
+            elif len(teacher_selected) == 1:
+                # Only one teacher available, must be selected
+                self.model.Add(list(teacher_selected.values())[0] == 1)
+            
             all_starts = []
             
             # Map: (day, slot, u_idx) -> b_start (that STARTS at this slot)
@@ -353,11 +401,16 @@ class TimetableScheduler:
                         continue
                     
                     for u_idx in unit_indices:
+                        _, teacher, _ = self.idx_to_lab_unit[u_idx]
                         b_start = self.model.NewBoolVar(f'lab_start_{batch}_{subject}_{day}_{s}_{u_idx}')
                         
                         # Forward: Start => Occupy s and s+1
                         self.model.Add(self.var_labs[batch][day][s] == u_idx).OnlyEnforceIf(b_start)
                         self.model.Add(self.var_labs[batch][day][s+1] == u_idx).OnlyEnforceIf(b_start)
+                        
+                        # Only allow this unit if its teacher is selected
+                        if teacher in teacher_selected:
+                            self.model.Add(b_start == 0).OnlyEnforceIf(teacher_selected[teacher].Not())
                         
                         daily_starts.append(b_start)
                         starts_at[(day, s, u_idx)] = b_start
@@ -373,6 +426,12 @@ class TimetableScheduler:
                     if s == self.lunch_slot_idx: continue
                     
                     for u_idx in unit_indices:
+                        _, teacher, _ = self.idx_to_lab_unit[u_idx]
+                        
+                        # Only consider units from the selected teacher
+                        if teacher not in teacher_selected:
+                            continue
+                        
                         # If var == u_idx, then...
                         # It could be a start at s: starts_at.get((day, s, u_idx))
                         # OR a start at s-1: starts_at.get((day, s-1, u_idx))
@@ -394,6 +453,9 @@ class TimetableScheduler:
                             
                             # If assigned, then one of the causes must be true
                             self.model.Add(sum(potential_causes) >= 1).OnlyEnforceIf(is_assigned)
+                            
+                            # Also ensure teacher is selected if this unit is assigned
+                            self.model.Add(is_assigned == 0).OnlyEnforceIf(teacher_selected[teacher].Not())
                         else:
                             # If no potential starts cover this slot (e.g. lunch edge cases?), then it CANNOT be assigned
                             self.model.Add(self.var_labs[batch][day][s] != u_idx)
@@ -468,6 +530,57 @@ class TimetableScheduler:
                     
                     if occupied_bools:
                         self.model.Add(sum(occupied_bools) <= 1)
+
+    def _add_division_lab_teacher_consistency(self):
+        """
+        Ensure that for a given Division and Lab Subject, all batches in that division
+        use the same teacher. This ensures consistency across batches within a division.
+        """
+        for div in self.divisions:
+            batches = self.div_to_batches[div]
+            if len(batches) <= 1:
+                continue  # No need to enforce consistency for single batch
+            
+            for subject in self.raw_labs:
+                if subject not in self.frequencies:
+                    continue
+                
+                unit_indices = self.subj_to_lab_indices[subject]
+                if not unit_indices:
+                    continue
+                
+                # Get all teachers for this subject
+                teachers = set()
+                for u_idx in unit_indices:
+                    _, teacher, _ = self.idx_to_lab_unit[u_idx]
+                    teachers.add(teacher)
+                
+                if len(teachers) <= 1:
+                    continue  # Only one teacher available, no need to enforce
+                
+                # Create division-level teacher selection variable
+                div_teacher_selected = {}
+                for teacher in teachers:
+                    div_teacher_selected[teacher] = self.model.NewBoolVar(f'div_lab_teacher_{div}_{subject}_{teacher}')
+                
+                # Exactly one teacher selected at division level
+                self.model.Add(sum(div_teacher_selected.values()) == 1)
+                
+                # For each batch, ensure it can only use units from the division-selected teacher
+                for batch in batches:
+                    for u_idx in unit_indices:
+                        _, unit_teacher, _ = self.idx_to_lab_unit[u_idx]
+                        
+                        # If division selected a teacher other than unit_teacher, 
+                        # then this batch cannot use this unit
+                        for teacher in teachers:
+                            if teacher != unit_teacher:
+                                # If div selected teacher, batch cannot use units from other teachers
+                                for day in self.days:
+                                    for s in self.slots:
+                                        self.model.Add(
+                                            self.var_labs[batch][day][s] != u_idx
+                                        ).OnlyEnforceIf(div_teacher_selected[teacher])
 
     def _add_lab_synchronization(self):
         """
@@ -598,11 +711,11 @@ class TimetableScheduler:
         print("Solving...")
         self.solver.parameters.max_time_in_seconds = 300
         self.solver.parameters.num_search_workers = 8
-        status = self.solver.Solve(self.model, TimetableSolutionPrinter(5))
-        return status
+        self.solve_status = self.solver.Solve(self.model, TimetableSolutionPrinter(5))
+        return self.solve_status
 
     def export_solution(self, filename="timetable_full.json"):
-        if self.solver.StatusName() not in ["OPTIMAL", "FEASIBLE"]:
+        if self.solve_status is None or self.solve_status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             print("No solution.")
             return
 
@@ -711,8 +824,6 @@ class TimetableScheduler:
 
 if __name__ == "__main__":
     scheduler = TimetableScheduler()
-    print("hello")
-    print(type(scheduler))
     try:
         scheduler.build_model()
         status = scheduler.solve()
