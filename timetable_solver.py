@@ -6,7 +6,7 @@ import pandas as pd
 from tabulate import tabulate
 from ortools.sat.python import cp_model
 import math
-
+#this is final second year algorithm
 class TimetableSolutionPrinter(cp_model.CpSolverSolutionCallback):
     """Print intermediate solutions."""
     def __init__(self, limit: int):
