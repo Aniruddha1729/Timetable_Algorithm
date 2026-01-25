@@ -3,45 +3,11 @@
         "DIV-A1": {
             "Mon": [
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
+                    "teacher": "SI",
+                    "room": "6209"
                 },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6205"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6205"
-                }
-            ],
-            "Tue": [
                 {
                     "class": "Kotlin",
                     "type": "LECTURE",
@@ -49,16 +15,10 @@
                     "room": "5302"
                 },
                 {
-                    "class": "GenAI",
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "SI",
-                    "room": "6209"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "LUNCH",
@@ -71,6 +31,138 @@
                 {
                     "class": "Free",
                     "type": "FREE"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                }
+            ],
+            "Wed": [
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
                 },
                 {
                     "class": "MA",
@@ -79,97 +171,9 @@
                     "room": "6201"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Wed": [
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6206"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
                     "room": "6203"
                 }
             ],
@@ -181,9 +185,25 @@
                     "room": "6209"
                 },
                 {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
@@ -193,81 +213,23 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
+                    "class": "Free",
+                    "type": "FREE"
                 }
             ]
         },
         "DIV-A2": {
             "Mon": [
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "SDAUR",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
+                    "teacher": "SI",
+                    "room": "6209"
                 },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6211"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6211"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Tue": [
                 {
                     "class": "Kotlin",
                     "type": "LECTURE",
@@ -275,38 +237,70 @@
                     "room": "5302"
                 },
                 {
-                    "class": "GenAI",
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "SI",
-                    "room": "6209"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "MAL",
                     "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
+                    "teacher": "Abhishek Raut",
+                    "room": "90001"
                 },
                 {
-                    "class": "MA",
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "90001"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "Free",
@@ -315,76 +309,74 @@
             ],
             "Wed": [
                 {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
                     "class": "BSFE",
                     "type": "LECTURE",
                     "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 },
                 {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
-                    "class": "SDAUR",
+                    "class": "UHV",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "teacher": "Spatil",
+                    "room": "6203"
                 }
             ],
             "Thu": [
                 {
                     "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6211"
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
                 },
                 {
                     "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6211"
+                    "teacher": "Asmita Manna",
+                    "room": "6206"
                 },
                 {
-                    "class": "BSFE",
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
                 },
                 {
                     "class": "Kotlin",
@@ -393,9 +385,21 @@
                     "room": "5302"
                 },
                 {
-                    "class": "DSA",
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
                     "room": "6203"
                 }
             ],
@@ -407,9 +411,21 @@
                     "room": "6209"
                 },
                 {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
@@ -419,73 +435,23 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
                     "class": "Free",
                     "type": "FREE"
                 },
                 {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6206"
                 }
             ]
         },
         "DIV-A3": {
             "Mon": [
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
+                    "teacher": "SI",
+                    "room": "6209"
                 },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6218"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6218"
-                }
-            ],
-            "Tue": [
                 {
                     "class": "Kotlin",
                     "type": "LECTURE",
@@ -493,16 +459,58 @@
                     "room": "5302"
                 },
                 {
-                    "class": "GenAI",
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "SI",
-                    "room": "6209"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
-                    "class": "UHV",
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6219"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
                 },
                 {
                     "class": "LUNCH",
@@ -515,6 +523,90 @@
                 {
                     "class": "Free",
                     "type": "FREE"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
+                }
+            ],
+            "Wed": [
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
                 },
                 {
                     "class": "MA",
@@ -523,97 +615,9 @@
                     "room": "6201"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Wed": [
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6206"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
                     "room": "6203"
                 }
             ],
@@ -625,9 +629,21 @@
                     "room": "6209"
                 },
                 {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
@@ -637,10 +653,6 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Kavita Kolpe",
@@ -651,63 +663,17 @@
                     "type": "LAB",
                     "teacher": "Kavita Kolpe",
                     "room": "9001"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6211"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6211"
                 }
             ]
         },
         "DIV-A4": {
             "Mon": [
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
+                    "teacher": "SI",
+                    "room": "6209"
                 },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
-                }
-            ],
-            "Tue": [
                 {
                     "class": "Kotlin",
                     "type": "LECTURE",
@@ -715,38 +681,66 @@
                     "room": "5302"
                 },
                 {
-                    "class": "GenAI",
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "SI",
-                    "room": "6209"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6218"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6218"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "MA",
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6210"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "Free",
@@ -755,84 +749,70 @@
             ],
             "Wed": [
                 {
-                    "class": "UHV",
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Abhishek Raut",
-                    "room": "9002"
+                    "room": "9001"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Abhishek Raut",
-                    "room": "9002"
+                    "room": "9001"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
                 },
                 {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
-                    "class": "SDAUR",
+                    "class": "UHV",
                     "type": "LECTURE",
-                    "teacher": "Sushma Parmar",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "teacher": "Spatil",
+                    "room": "6203"
                 }
             ],
             "Thu": [
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "BSFE",
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
+                    "teacher": "Swati Chandurkar",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6210"
                 },
                 {
                     "class": "Kotlin",
@@ -841,9 +821,21 @@
                     "room": "5302"
                 },
                 {
-                    "class": "DSA",
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Sushma Parmar",
+                    "room": "6405"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
                     "room": "6203"
                 }
             ],
@@ -855,9 +847,25 @@
                     "room": "6209"
                 },
                 {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "90001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "90001"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Asmita Manna",
+                    "teacher": "Swati Chandurkar",
                     "room": "6203"
                 },
                 {
@@ -867,24 +875,16 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
                 }
             ]
         }
@@ -893,36 +893,28 @@
         "DIV-B1": {
             "Mon": [
                 {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Kavita Kolpe",
@@ -933,14 +925,26 @@
                     "type": "LAB",
                     "teacher": "Kavita Kolpe",
                     "room": "90001"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
                 }
             ],
             "Tue": [
                 {
-                    "class": "UHV",
+                    "class": "MA",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "NG",
+                    "room": "6201"
                 },
                 {
                     "class": "Free",
@@ -955,140 +959,36 @@
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
                 }
             ],
             "Wed": [
                 {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "90001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "90001"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                }
-            ],
-            "Fri": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "UHV",
@@ -1097,17 +997,117 @@
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
+                    "class": "GenAI",
                     "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
                     "teacher": "NG",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 }
             ]
@@ -1115,22 +1115,22 @@
         "DIV-B2": {
             "Mon": [
                 {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9005"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9005"
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
                     "class": "LUNCH",
@@ -1145,172 +1145,68 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
                 }
             ],
             "Tue": [
                 {
-                    "class": "UHV",
+                    "class": "MA",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "NG",
+                    "room": "6201"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9005"
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Kavita Kolpe",
-                    "room": "9005"
+                    "room": "9002"
                 },
                 {
-                    "class": "MAL",
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6219"
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
                 }
             ],
             "Wed": [
                 {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6205"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6205"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                }
-            ],
-            "Fri": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "UHV",
@@ -1319,17 +1215,121 @@
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "NG",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 }
             ]
@@ -1337,54 +1337,58 @@
         "DIV-B3": {
             "Mon": [
                 {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "DEVL",
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9005"
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9005"
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
                 }
             ],
             "Tue": [
                 {
-                    "class": "UHV",
+                    "class": "MA",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "NG",
+                    "room": "6201"
                 },
                 {
                     "class": "Free",
@@ -1399,140 +1403,32 @@
                     "type": "COMMON"
                 },
                 {
-                    "class": "MAL",
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6219"
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Abhishek Raut",
-                    "room": "9002"
+                    "room": "9001"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9002"
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 }
             ],
             "Wed": [
                 {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6210"
-                },
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                }
-            ],
-            "Fri": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "UHV",
@@ -1541,17 +1437,121 @@
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "NG",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6218"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6218"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 }
             ]
@@ -1559,58 +1559,66 @@
         "DIV-B4": {
             "Mon": [
                 {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
-                },
-                {
                     "class": "Free",
                     "type": "FREE"
                 },
                 {
                     "class": "Free",
                     "type": "FREE"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
                 }
             ],
             "Tue": [
                 {
-                    "class": "UHV",
+                    "class": "MA",
                     "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
+                    "teacher": "NG",
+                    "room": "6201"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6205"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6205"
                 },
                 {
                     "class": "LUNCH",
@@ -1625,132 +1633,24 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "DSAL",
+                    "class": "MAL",
                     "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
                 },
                 {
-                    "class": "DSAL",
+                    "class": "MAL",
                     "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
                 }
             ],
             "Wed": [
                 {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Asmita Manna",
                     "room": "6203"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "NG",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Asmita Manna",
-                    "room": "6203"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                }
-            ],
-            "Fri": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "UHV",
@@ -1759,21 +1659,121 @@
                     "room": "6203"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6210"
-                },
-                {
-                    "class": "MA",
+                    "class": "GenAI",
                     "type": "LECTURE",
-                    "teacher": "NG",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "90001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "90001"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 }
             ]
@@ -1783,46 +1783,46 @@
         "DIV-C1": {
             "Mon": [
                 {
-                    "class": "Kotlin",
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "PS",
+                    "room": "6201"
+                },
+                {
                     "class": "GenAI",
                     "type": "LECTURE",
                     "teacher": "Puja Pohakar",
                     "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
                 }
             ],
             "Tue": [
@@ -1835,32 +1835,32 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "MA",
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DSA",
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6211"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6211"
+                },
+                {
+                    "class": "BSFE",
                     "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6211"
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "Kotlin",
@@ -1871,74 +1871,16 @@
             ],
             "Wed": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "room": "9005"
                 },
                 {
                     "class": "UHV",
@@ -1947,32 +1889,52 @@
                     "room": "6203"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                }
-            ],
-            "Fri": [
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
                 {
                     "class": "BSFE",
                     "type": "LECTURE",
                     "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6211"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6211"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
                 },
                 {
                     "class": "LUNCH",
@@ -1983,82 +1945,90 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6205"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6205"
+                    "class": "Free",
+                    "type": "FREE"
                 },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                }
+            ],
+            "Fri": [
                 {
                     "class": "SDAUR",
                     "type": "LECTURE",
                     "teacher": "Neha Sharma",
                     "room": "6405"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "PS",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6219"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 }
             ]
         },
         "DIV-C2": {
             "Mon": [
                 {
-                    "class": "Kotlin",
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                }
-            ],
-            "Tue": [
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "MA",
@@ -2067,22 +2037,52 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6206"
                 },
                 {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
+                    "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6219"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "Kotlin",
@@ -2093,70 +2093,8 @@
             ],
             "Wed": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6219"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9002"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "Free",
@@ -2167,6 +2105,66 @@
                     "type": "LECTURE",
                     "teacher": "Spatil",
                     "room": "6203"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
                 },
                 {
                     "class": "DSAL",
@@ -2183,30 +2181,38 @@
             ],
             "Fri": [
                 {
-                    "class": "BSFE",
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "PS",
                     "room": "6201"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Swati Chandurkar",
-                    "room": "6206"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
                 },
                 {
                     "class": "Free",
@@ -2215,76 +2221,40 @@
                 {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
                 }
             ]
         },
         "DIV-C3": {
             "Mon": [
                 {
-                    "class": "Kotlin",
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Ashwini Matange",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Ashwini Matange",
+                    "room": "6206"
+                },
+                {
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9001"
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                }
-            ],
-            "Tue": [
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6210"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "MA",
@@ -2293,22 +2263,48 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Ashwini Matange",
+                    "room": "6211"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Ashwini Matange",
+                    "room": "6211"
                 },
                 {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
+                    "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "Free",
                     "type": "FREE"
                 },
                 {
                     "class": "Free",
                     "type": "FREE"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "Kotlin",
@@ -2319,66 +2315,8 @@
             ],
             "Wed": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6211"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6211"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                }
-            ],
-            "Thu": [
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "Free",
@@ -2391,36 +2329,52 @@
                     "room": "6203"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6205"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6205"
-                }
-            ],
-            "Fri": [
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
                 {
                     "class": "BSFE",
                     "type": "LECTURE",
                     "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "MAL",
                     "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9005"
+                    "teacher": "NG",
+                    "room": "6219"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "9005"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
                 },
                 {
                     "class": "LUNCH",
@@ -2435,74 +2389,98 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
                 },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
+                }
+            ],
+            "Fri": [
                 {
                     "class": "SDAUR",
                     "type": "LECTURE",
                     "teacher": "Neha Sharma",
                     "room": "6405"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "PS",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9002"
                 }
             ]
         },
         "DIV-C4": {
             "Mon": [
                 {
-                    "class": "Kotlin",
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6218"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "PS",
+                    "room": "6218"
+                },
+                {
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                }
-            ],
-            "Tue": [
-                {
                     "class": "DSAL",
                     "type": "LAB",
                     "teacher": "Asmita Manna",
-                    "room": "6205"
+                    "room": "6210"
                 },
                 {
                     "class": "DSAL",
                     "type": "LAB",
                     "teacher": "Asmita Manna",
-                    "room": "6205"
+                    "room": "6210"
                 },
                 {
                     "class": "MA",
@@ -2511,22 +2489,48 @@
                     "room": "6201"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
+                }
+            ],
+            "Tue": [
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
                 },
                 {
                     "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
+                    "teacher": "Asmita Manna",
                     "room": "6203"
                 },
                 {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
                     "class": "Free",
                     "type": "FREE"
                 },
                 {
                     "class": "Free",
                     "type": "FREE"
+                },
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "Kotlin",
@@ -2537,70 +2541,8 @@
             ],
             "Wed": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6210"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "Puja Pohakar",
-                    "room": "6209"
-                }
-            ],
-            "Thu": [
-                {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Aparna Joshi",
-                    "room": "6203"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
                 },
                 {
                     "class": "Free",
@@ -2613,32 +2555,52 @@
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Fri": [
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Asmita Manna",
+                    "room": "6203"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
                 {
                     "class": "BSFE",
                     "type": "LECTURE",
                     "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
+                    "teacher": "Abhishek Raut",
+                    "room": "9001"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9002"
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "Puja Pohakar",
+                    "room": "6209"
                 },
                 {
                     "class": "LUNCH",
@@ -2649,22 +2611,60 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "MAL",
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
                 },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6205"
+                }
+            ],
+            "Fri": [
                 {
                     "class": "SDAUR",
                     "type": "LECTURE",
                     "teacher": "Neha Sharma",
                     "room": "6405"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
+                },
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "PS",
+                    "room": "6201"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 }
             ]
         }
@@ -2673,124 +2673,60 @@
         "DIV-D1": {
             "Mon": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
                     "room": "6203"
                 },
                 {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                },
+                {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
                 },
                 {
-                    "class": "DEVL",
+                    "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
+                    "teacher": "Aparna Joshi",
+                    "room": "6206"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
                 }
             ],
             "Tue": [
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Abhishek Raut",
-                    "room": "90001"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
-                }
-            ],
-            "Wed": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6206"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "Kotlin",
@@ -2799,15 +2735,9 @@
                     "room": "5302"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Thu": [
                 {
                     "class": "UHV",
                     "type": "LECTURE",
@@ -2815,16 +2745,42 @@
                     "room": "6203"
                 },
                 {
-                    "class": "BSFE",
+                    "class": "DSA",
                     "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
                     "class": "GenAI",
                     "type": "LECTURE",
                     "teacher": "YS",
                     "room": "6209"
+                }
+            ],
+            "Wed": [
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6211"
+                },
+                {
+                    "class": "Kotlin",
+                    "type": "LECTURE",
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
                 },
                 {
                     "class": "LUNCH",
@@ -2839,19 +2795,87 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "MAL",
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
+                    "teacher": "Sonika Gill",
+                    "room": "9002"
                 },
                 {
-                    "class": "MAL",
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Dhanashree Patil",
-                    "room": "6218"
+                    "teacher": "Sonika Gill",
+                    "room": "9002"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "90001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "90001"
                 }
             ],
             "Fri": [
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6210"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
                 {
                     "class": "DSA",
                     "type": "LECTURE",
@@ -2865,90 +2889,22 @@
                 {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
                 }
             ]
         },
         "DIV-D2": {
             "Mon": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
                     "room": "6203"
                 },
                 {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Ashwini Matange",
-                    "room": "6210"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
-                }
-            ],
-            "Tue": [
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
                 },
                 {
                     "class": "GenAI",
@@ -2961,18 +2917,18 @@
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
+                    "class": "MA",
                     "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "DSA",
@@ -2981,28 +2937,34 @@
                     "room": "6203"
                 }
             ],
-            "Wed": [
+            "Tue": [
                 {
-                    "class": "SDAUR",
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9005"
+                },
+                {
+                    "class": "Kotlin",
                     "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6211"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6211"
+                    "teacher": "Tushar Kute",
+                    "room": "5302"
                 },
                 {
                     "class": "LUNCH",
                     "type": "COMMON"
+                },
+                {
+                    "class": "UHV",
+                    "type": "LECTURE",
+                    "teacher": "Spatil",
+                    "room": "6203"
                 },
                 {
                     "class": "DSA",
@@ -3011,10 +2973,48 @@
                     "room": "6203"
                 },
                 {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                }
+            ],
+            "Wed": [
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Swati Chandurkar",
+                    "room": "6205"
+                },
+                {
                     "class": "Kotlin",
                     "type": "LECTURE",
                     "teacher": "Tushar Kute",
                     "room": "5302"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "Free",
@@ -3027,22 +3027,18 @@
             ],
             "Thu": [
                 {
-                    "class": "UHV",
-                    "type": "LECTURE",
-                    "teacher": "Spatil",
-                    "room": "6203"
-                },
-                {
                     "class": "BSFE",
                     "type": "LECTURE",
                     "teacher": "Priyadarshani Ranbhise",
                     "room": "6201"
                 },
                 {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "LUNCH",
@@ -3051,13 +3047,13 @@
                 {
                     "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Ashwini Matange",
+                    "teacher": "Swati Chandurkar",
                     "room": "6211"
                 },
                 {
                     "class": "DSAL",
                     "type": "LAB",
-                    "teacher": "Ashwini Matange",
+                    "teacher": "Swati Chandurkar",
                     "room": "6211"
                 },
                 {
@@ -3071,6 +3067,34 @@
             ],
             "Fri": [
                 {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "Dhanashree Patil",
+                    "room": "6218"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Ashwini Matange",
@@ -3080,67 +3104,45 @@
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Sonika Gill",
-                    "room": "9001"
+                    "room": "9005"
                 },
                 {
                     "class": "DEVL",
                     "type": "LAB",
                     "teacher": "Sonika Gill",
-                    "room": "9001"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Kotlin",
-                    "type": "LECTURE",
-                    "teacher": "Tushar Kute",
-                    "room": "5302"
+                    "room": "9005"
                 }
             ]
         },
         "DIV-D3": {
             "Mon": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
                     "room": "6203"
                 },
                 {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                },
+                {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
                 },
                 {
                     "class": "Free",
@@ -3151,82 +3153,20 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
                 }
             ],
             "Tue": [
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9001"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
                     "class": "Free",
                     "type": "FREE"
                 },
                 {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
-                }
-            ],
-            "Wed": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "PS",
-                    "room": "6219"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
                 },
                 {
                     "class": "Kotlin",
@@ -3235,15 +3175,9 @@
                     "room": "5302"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                }
-            ],
-            "Thu": [
                 {
                     "class": "UHV",
                     "type": "LECTURE",
@@ -3251,78 +3185,28 @@
                     "room": "6203"
                 },
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6205"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6205"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9005"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Kavita Kolpe",
-                    "room": "9005"
-                }
-            ],
-            "Fri": [
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Ashwini Matange",
                     "room": "6203"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6205"
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
                 },
                 {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Aparna Joshi",
-                    "room": "6205"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                }
+            ],
+            "Wed": [
                 {
                     "class": "Free",
                     "type": "FREE"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
                 },
                 {
                     "class": "Free",
@@ -3333,52 +3217,172 @@
                     "type": "LECTURE",
                     "teacher": "Tushar Kute",
                     "room": "5302"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6211"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6211"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9002"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6205"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6205"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Kavita Kolpe",
+                    "room": "9001"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6211"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Aparna Joshi",
+                    "room": "6211"
                 }
             ]
         },
         "DIV-D4": {
             "Mon": [
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "MA",
-                    "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
-                },
-                {
                     "class": "UHV",
                     "type": "LECTURE",
                     "teacher": "Spatil",
                     "room": "6203"
                 },
                 {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                },
+                {
                     "class": "LUNCH",
                     "type": "COMMON"
                 },
                 {
-                    "class": "DSAL",
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6205"
+                    "teacher": "Sonika Gill",
+                    "room": "9002"
                 },
                 {
-                    "class": "DSAL",
+                    "class": "DEVL",
                     "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6205"
+                    "teacher": "Sonika Gill",
+                    "room": "9002"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
                 }
             ],
             "Tue": [
@@ -3391,85 +3395,15 @@
                     "type": "FREE"
                 },
                 {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6210"
-                },
-                {
-                    "class": "DSAL",
-                    "type": "LAB",
-                    "teacher": "Asmita Manna",
-                    "room": "6210"
-                },
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
-                }
-            ],
-            "Wed": [
-                {
-                    "class": "SDAUR",
-                    "type": "LECTURE",
-                    "teacher": "Neha Sharma",
-                    "room": "6405"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DSA",
-                    "type": "LECTURE",
-                    "teacher": "Ashwini Matange",
-                    "room": "6203"
-                },
-                {
                     "class": "Kotlin",
                     "type": "LECTURE",
                     "teacher": "Tushar Kute",
                     "room": "5302"
                 },
                 {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
+                    "class": "LUNCH",
+                    "type": "COMMON"
                 },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9001"
-                }
-            ],
-            "Thu": [
                 {
                     "class": "UHV",
                     "type": "LECTURE",
@@ -3477,74 +3411,28 @@
                     "room": "6203"
                 },
                 {
-                    "class": "BSFE",
-                    "type": "LECTURE",
-                    "teacher": "Priyadarshani Ranbhise",
-                    "room": "6201"
-                },
-                {
-                    "class": "GenAI",
-                    "type": "LECTURE",
-                    "teacher": "YS",
-                    "room": "6209"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
-                },
-                {
-                    "class": "DEVL",
-                    "type": "LAB",
-                    "teacher": "Sonika Gill",
-                    "room": "9005"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
-                },
-                {
-                    "class": "MAL",
-                    "type": "LAB",
-                    "teacher": "NG",
-                    "room": "6219"
-                }
-            ],
-            "Fri": [
-                {
                     "class": "DSA",
                     "type": "LECTURE",
                     "teacher": "Ashwini Matange",
                     "room": "6203"
                 },
                 {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "LUNCH",
-                    "type": "COMMON"
-                },
-                {
-                    "class": "Free",
-                    "type": "FREE"
-                },
-                {
-                    "class": "MA",
+                    "class": "SDAUR",
                     "type": "LECTURE",
-                    "teacher": "PS",
-                    "room": "6201"
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "GenAI",
+                    "type": "LECTURE",
+                    "teacher": "YS",
+                    "room": "6209"
+                }
+            ],
+            "Wed": [
+                {
+                    "class": "Free",
+                    "type": "FREE"
                 },
                 {
                     "class": "Free",
@@ -3555,6 +3443,118 @@
                     "type": "LECTURE",
                     "teacher": "Tushar Kute",
                     "room": "5302"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DEVL",
+                    "type": "LAB",
+                    "teacher": "Sonika Gill",
+                    "room": "9001"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                }
+            ],
+            "Thu": [
+                {
+                    "class": "BSFE",
+                    "type": "LECTURE",
+                    "teacher": "Priyadarshani Ranbhise",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                },
+                {
+                    "class": "DSAL",
+                    "type": "LAB",
+                    "teacher": "Asmita Manna",
+                    "room": "6210"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                }
+            ],
+            "Fri": [
+                {
+                    "class": "MA",
+                    "type": "LECTURE",
+                    "teacher": "NG",
+                    "room": "6201"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "Free",
+                    "type": "FREE"
+                },
+                {
+                    "class": "LUNCH",
+                    "type": "COMMON"
+                },
+                {
+                    "class": "SDAUR",
+                    "type": "LECTURE",
+                    "teacher": "Neha Sharma",
+                    "room": "6405"
+                },
+                {
+                    "class": "DSA",
+                    "type": "LECTURE",
+                    "teacher": "Ashwini Matange",
+                    "room": "6203"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
+                },
+                {
+                    "class": "MAL",
+                    "type": "LAB",
+                    "teacher": "NG",
+                    "room": "6219"
                 }
             ]
         }
