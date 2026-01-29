@@ -85,36 +85,49 @@ class TimetablePayload(BaseModel):
 # Generate Timetable JSON
 # -----------------------------
 @app.post("/generate")
-def generate(payload: TimetablePayload):
+async def generate(payload: TimetablePayload):
     print("Received timetable generation request.")
+    print(f"Processing {len(payload.divisions)} divisions, {len(payload.lectures)} lectures, {len(payload.labs)} labs")
 
-    with open("config.json", "w") as f:
-        json.dump({
-            "divisions": payload.divisions,
-            "lectures": payload.lectures,
-            "labs": payload.labs,
-            **payload.settings
-        }, f, indent=2)
+    try:
+        with open("config.json", "w") as f:
+            json.dump({
+                "divisions": payload.divisions,
+                "lectures": payload.lectures,
+                "labs": payload.labs,
+                **payload.settings
+            }, f, indent=2)
 
-    with open("frequencies.json", "w") as f:
-        json.dump(payload.frequencies, f, indent=2)
+        with open("frequencies.json", "w") as f:
+            json.dump(payload.frequencies, f, indent=2)
 
-    with open("teachers.json", "w") as f:
-        json.dump(payload.teachers, f, indent=2)
+        with open("teachers.json", "w") as f:
+            json.dump(payload.teachers, f, indent=2)
 
-    with open("rooms.json", "w") as f:
-        json.dump(payload.rooms, f, indent=2)
+        with open("rooms.json", "w") as f:
+            json.dump(payload.rooms, f, indent=2)
 
-    success = generate_timetable()
+        success = generate_timetable()
 
-    if not success:
+        if not success:
+            raise HTTPException(
+                status_code=500,
+                detail="Timetable generation failed. Check constraints."
+            )
+
+        with open("timetable_full.json") as f:
+            result = json.load(f)
+            
+        print("✓ Successfully generated timetable, returning response")
+        return {"timetable": result}
+        
+    except Exception as e:
+        print(f"✗ Error in /generate endpoint: {e}")
+        traceback.print_exc()
         raise HTTPException(
             status_code=500,
-            detail="Timetable generation failed. Check constraints."
+            detail=f"Server error: {str(e)}"
         )
-
-    with open("timetable_full.json") as f:
-        return {"timetable": json.load(f)}
 
 
 # -----------------------------
