@@ -1046,7 +1046,7 @@ class TimetableScheduler:
         
         # Optimize solver parameters for faster solving
         # Reduced to 20s to work within Railway/cloud platform timeouts
-        self.solver.parameters.max_time_in_seconds = 20
+        self.solver.parameters.max_time_in_seconds = 30
         self.solver.parameters.num_search_workers = 4
         # Use linear scan for better performance
         self.solver.parameters.search_branching = cp_model.PORTFOLIO_SEARCH
