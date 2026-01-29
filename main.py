@@ -24,25 +24,47 @@ def generate_timetable(
     output_file="timetable_full.json"
 ):
     try:
+        print("\n" + "="*60)
+        print("INITIALIZING TIMETABLE SCHEDULER")
+        print("="*60)
+        
         scheduler = TimetableScheduler(
             config_path=config_path,
             freq_path=freq_path,
             teacher_path=teacher_path,
             room_path=room_path
         )
+        print("✓ Scheduler initialized successfully\n")
 
         scheduler.build_model()
         status = scheduler.solve()
 
         if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+            print("\n✓ Solution found! Exporting...")
             scheduler.export_solution(filename=output_file)
+            print("✓ Timetable exported successfully!\n")
             return True
-
-        return False
+        else:
+            print("\n✗ No solution found!")
+            print(f"  Status code: {status}")
+            if status == cp_model.INFEASIBLE:
+                print("\n  The problem is INFEASIBLE - constraints cannot be satisfied.")
+                print("  Please check:")
+                print("    - Are all subjects assigned to teachers?")
+                print("    - Do fixed slots conflict with other requirements?")
+                print("    - Are frequency requirements too high?")
+                print("    - Is there enough room/teacher availability?")
+            return False
 
     except Exception as e:
-        print("Solver error:", e)
+        print("\n" + "="*60)
+        print("✗ SOLVER ERROR")
+        print("="*60)
+        print(f"Error type: {type(e).__name__}")
+        print(f"Error message: {str(e)}")
+        print("\nFull traceback:")
         traceback.print_exc()
+        print("="*60 + "\n")
         return False
 
 

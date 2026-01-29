@@ -7,6 +7,12 @@ from tabulate import tabulate
 from ortools.sat.python import cp_model
 import math
 #this is final second year algorithm
+
+# Helper function to ensure output is flushed immediately
+def log_print(*args, **kwargs):
+    """Print with immediate flush for real-time logging."""
+    print(*args, **kwargs)
+    sys.stdout.flush()
 class TimetableSolutionPrinter(cp_model.CpSolverSolutionCallback):
     """Print intermediate solutions."""
     def __init__(self, limit: int):
@@ -17,10 +23,10 @@ class TimetableSolutionPrinter(cp_model.CpSolverSolutionCallback):
 
     def on_solution_callback(self):
         current_time = time.time()
-        print(f'Solution {self._solution_count} found in {current_time - self._start_time:.2f} s')
+        log_print(f'Solution {self._solution_count} found in {current_time - self._start_time:.2f} s')
         self._solution_count += 1
         if self._solution_count >= self._solution_limit:
-            print(f'Stopping search after finding {self._solution_limit} solutions.')
+            log_print(f'Stopping search after finding {self._solution_limit} solutions.')
             self.StopSearch()
 
     def solution_count(self):
@@ -44,13 +50,14 @@ class TimetableScheduler:
         
         self._process_config()
         self._prepare_solver_data()
+        self._validate_config()
 
     def _load_json(self, path: str) -> Any:
         try:
             with open(path, 'r') as f:
                 return json.load(f)
         except (FileNotFoundError, json.JSONDecodeError) as e:
-            print(f"Error loading {path}: {e}")
+            log_print(f"Error loading {path}: {e}")
             sys.exit(1)
 
     def _process_config(self):
@@ -74,7 +81,110 @@ class TimetableScheduler:
         self.lunch_slot_idx = None
         if self.lunch_start and self.start_hour <= self.lunch_start < self.end_hour:
             self.lunch_slot_idx = self.lunch_start - self.start_hour
-            print(f"Lunch configured at slot index: {self.lunch_slot_idx} ({self.lunch_start}:00)")
+            log_print(f"Lunch configured at slot index: {self.lunch_slot_idx} ({self.lunch_start}:00)")
+
+        # -----------------------------
+        # Fixed lecture slots (optional)
+        # -----------------------------
+        # You can add keys like:
+        #   "MDM_time": {"day": "Mon", "time": "1-2"}
+        #   "OE-DS_time": [{"day":"Tue","time":"2-3"}, {"day":"Thu","time":"2-3"}]
+        #   "OE-ES_time": "Wed@13-14"
+        #
+        # Supported formats for each *_time value:
+        # - dict: {"day": "Mon", "time": "13-14"} or {"day":"Mon","slot": 3} (0-based)
+        # - list: list of dicts/strings (multiple fixed occurrences)
+        # - string:
+        #   - "Mon@13-14" / "Mon 13-14" / "Mon 1-2"
+        #   - "13-14" or "1-2" (applies to ALL days)
+        #
+        # Note: time like "1-2" is interpreted as 13-14 if start_hour is in the morning.
+        def _parse_slot_time_str(t: str) -> int:
+            raw = t.strip().lower().replace("to", "-").replace(" ", "")
+            # Extract first number as start hour
+            num = ""
+            for ch in raw:
+                if ch.isdigit():
+                    num += ch
+                elif num:
+                    break
+            if not num:
+                raise ValueError(f"Invalid time string: {t!r}")
+            start = int(num)
+            # Heuristic: if schedule starts in morning and time is 1..7, treat as PM.
+            if self.start_hour <= 10 and start < self.start_hour:
+                start += 12
+            slot = start - self.start_hour
+            if slot < 0 or slot >= self.total_slots:
+                raise ValueError(f"Fixed time {t!r} maps to slot {slot}, out of range.")
+            return slot
+
+        def _normalize_fixed_value(val):
+            if val is None:
+                return []
+            if isinstance(val, list):
+                return val
+            return [val]
+
+        self.fixed_lecture_slots: Dict[str, List[Tuple[str, int]]] = {}
+        for key, val in self.config.items():
+            if not isinstance(key, str) or not key.endswith("_time"):
+                continue
+            subject = key[:-5]
+            if subject not in self.raw_lectures:
+                continue
+
+            occurrences: List[Tuple[str, int]] = []
+            for item in _normalize_fixed_value(val):
+                if isinstance(item, dict):
+                    day = item.get("day")
+                    if day is None:
+                        # Apply to all days if day omitted
+                        days = list(self.days)
+                    else:
+                        days = [day]
+
+                    if "slot" in item:
+                        slot_idx = int(item["slot"])
+                    else:
+                        time_str = item.get("time") or item.get("hour")
+                        if time_str is None:
+                            raise ValueError(f"{key} dict must contain 'time'/'hour' or 'slot'. Got: {item}")
+                        slot_idx = _parse_slot_time_str(str(time_str))
+
+                    for d in days:
+                        occurrences.append((d, slot_idx))
+
+                elif isinstance(item, str):
+                    s = item.strip()
+                    day_part = None
+                    time_part = s
+                    if "@" in s:
+                        day_part, time_part = s.split("@", 1)
+                    elif " " in s:
+                        day_part, time_part = s.split(" ", 1)
+
+                    slot_idx = _parse_slot_time_str(time_part)
+                    if day_part:
+                        occurrences.append((day_part.strip(), slot_idx))
+                    else:
+                        # Apply to all days if no day provided
+                        for d in self.days:
+                            occurrences.append((d, slot_idx))
+                else:
+                    raise ValueError(f"{key} must be dict/list/string. Got: {type(item)}")
+
+            # Keep only valid days
+            filtered: List[Tuple[str, int]] = []
+            for d, s_idx in occurrences:
+                if d not in self.days:
+                    raise ValueError(f"{key} has invalid day {d!r}. Valid: {self.days}")
+                if self.lunch_slot_idx is not None and s_idx == self.lunch_slot_idx:
+                    raise ValueError(f"{key} targets lunch slot {s_idx}; choose a non-lunch slot.")
+                filtered.append((d, s_idx))
+
+            if filtered:
+                self.fixed_lecture_slots[subject] = filtered
 
         # Generate Batches
         # Map: DivA -> [A1, A2, A3, A4]
@@ -90,10 +200,10 @@ class TimetableScheduler:
             self.div_to_batches[div] = batches
             self.all_batches.extend(batches)
         
-        print(f"Generated Batches: {self.div_to_batches}")
+        log_print(f"Generated Batches: {self.div_to_batches}")
 
     def _prepare_solver_data(self):
-        print("\n--- Preparing Data ---")
+        log_print("\n--- Preparing Data ---")
         
         # 1. Invert Teacher Map
         self.subject_to_teachers = {s: [] for s in self.raw_lectures + self.raw_labs}
@@ -124,6 +234,8 @@ class TimetableScheduler:
                 for teacher in teachers:
                     unit = (subject, teacher, is_lab_flag)
                     target_list.append(unit)
+                if not teachers or teachers == ["Staff"]:
+                    log_print(f"  Warning: Subject '{subject}' has no assigned teacher, using 'Staff'")
 
         create_units(self.raw_lectures, False, self.lecture_units)
         create_units(self.raw_labs, True, self.lab_units)
@@ -180,7 +292,7 @@ class TimetableScheduler:
         # We can create Lab Units as (Subject, Teacher, Room).
         # This expands the domain but solves the collision issue.
         
-        print("\n--- Expanding Lab Units with Rooms ---")
+        log_print("\n--- Expanding Lab Units with Rooms ---")
         new_lab_units = []
         for (subj, teacher, _) in self.lab_units:
             candidate_rooms = self.subj_to_rooms.get(subj, [])
@@ -197,14 +309,14 @@ class TimetableScheduler:
         self.num_lab_units = len(self.lab_units)
         self.idx_to_lab_unit = {i: u for i, u in enumerate(self.lab_units)}
         
-        # Re-map subject indices for labs4
-        print("Re-mapping Lab Unit Indices...")
+        # Re-map subject indices for labs
+        log_print("Re-mapping Lab Unit Indices...")
         self.subj_to_lab_indices = {s: [] for s in self.raw_labs}
         for idx, (subj, _, _) in self.idx_to_lab_unit.items():
             self.subj_to_lab_indices[subj].append(idx)
             
         # Re-map teacher indices for labs
-        print("Re-mapping Teacher to Units...")
+        log_print("Re-mapping Teacher to Units...")
         self.teacher_to_units = {} # Reset and rebuild
         for idx, (_, teacher, _) in self.idx_to_lecture_unit.items():
             if teacher not in self.teacher_to_units: self.teacher_to_units[teacher] = []
@@ -233,88 +345,259 @@ class TimetableScheduler:
                 for idx in self.subj_to_lecture_indices[subj]:
                     self.room_to_units[best_room].append(('lec', idx))
             else:
+                # Allow unassigned rooms - don't block timetable generation
                 self.lecture_subj_to_room[subj] = "Unassigned"
+                log_print(f"  Warning: Subject '{subj}' has no room assigned - will show as 'Unassigned' in timetable")
+                # Still register lecture units but without room constraint
+                # This allows the timetable to be generated even without rooms
 
         # For labs, the room is part of the unit
-        print("Mapping Rooms to Lab Units...")
+        log_print("Mapping Rooms to Lab Units...")
         for idx, (_, _, room) in self.idx_to_lab_unit.items():
             if room not in self.room_to_units: self.room_to_units[room] = []
             self.room_to_units[room].append(('lab', idx))
 
-    def build_model(self):
-        print("\nBuilding Batch-Enabled Model...")
+    def _validate_config(self):
+        """Validate configuration before building model."""
+        print("\n--- Validating Configuration ---")
+        issues = []
         
-        # 1. Variables
-        # A. Lectures: x_div[div][day][slot] -> Lecture Unit Index
-        for div in self.divisions:
-            self.var_lectures[div] = {}
-            for day in self.days:
-                self.var_lectures[div][day] = {}
-                for s in self.slots:
-                    self.var_lectures[div][day][s] = self.model.NewIntVar(-1, self.num_lecture_units - 1, f'Lec_{div}_{day}_{s}')
+        # Check that all lectures have frequencies
+        for subject in self.raw_lectures:
+            if subject not in self.frequencies:
+                issues.append(f"Lecture subject '{subject}' has no frequency in frequencies.json")
+            elif self.frequencies[subject] <= 0:
+                issues.append(f"Lecture subject '{subject}' has invalid frequency: {self.frequencies[subject]}")
+        
+        # Check that all labs have frequencies
+        for subject in self.raw_labs:
+            if subject not in self.frequencies:
+                issues.append(f"Lab subject '{subject}' has no frequency in frequencies.json")
+            elif self.frequencies[subject] <= 0:
+                issues.append(f"Lab subject '{subject}' has invalid frequency: {self.frequencies[subject]}")
+        
+        # Check that all lectures have teachers
+        for subject in self.raw_lectures:
+            if subject not in self.subject_to_teachers or not self.subject_to_teachers[subject]:
+                issues.append(f"Lecture subject '{subject}' has no assigned teacher in teachers.json")
+        
+        # Check that all labs have teachers
+        for subject in self.raw_labs:
+            if subject not in self.subject_to_teachers or not self.subject_to_teachers[subject]:
+                issues.append(f"Lab subject '{subject}' has no assigned teacher in teachers.json")
+        
+        # Check fixed slots
+        if hasattr(self, 'fixed_lecture_slots'):
+            for subject, occs in self.fixed_lecture_slots.items():
+                if subject not in self.raw_lectures:
+                    issues.append(f"Fixed subject '{subject}' is not in lectures list")
+                elif subject not in self.subj_to_lecture_indices or not self.subj_to_lecture_indices[subject]:
+                    issues.append(f"Fixed subject '{subject}' has no lecture units")
+                for day, slot_idx in occs:
+                    if slot_idx == self.lunch_slot_idx:
+                        issues.append(f"Fixed slot for '{subject}' conflicts with lunch slot at index {slot_idx}")
+                    if slot_idx < 0 or slot_idx >= self.total_slots:
+                        issues.append(f"Fixed slot for '{subject}' has invalid slot index: {slot_idx}")
+        
+        # Check if total required hours exceed available slots
+        total_lecture_hours = sum(self.frequencies.get(s, 0) for s in self.raw_lectures) * len(self.divisions)
+        total_lab_hours = sum(self.frequencies.get(s, 0) for s in self.raw_labs) * len(self.all_batches)
+        total_available_slots = len(self.days) * len(self.slots) * len(self.divisions)
+        
+        if total_lecture_hours > total_available_slots * 0.8:  # Warning if >80% capacity
+            issues.append(f"WARNING: Total lecture hours ({total_lecture_hours}) may exceed capacity (~{int(total_available_slots * 0.8)} slots)")
+        
+        if issues:
+            log_print("\n⚠️  VALIDATION ISSUES FOUND:")
+            for i, issue in enumerate(issues, 1):
+                log_print(f"  {i}. {issue}")
+            log_print()
+        else:
+            log_print("✓ Configuration validated successfully")
+        
+        return len(issues) == 0
 
-        # B. Labs: x_batch[batch][day][slot] -> Lab Unit Index
-        print("Creating Lab Variables...")
-        for batch in self.all_batches:
-            self.var_labs[batch] = {}
-            for day in self.days:
-                self.var_labs[batch][day] = {}
-                for s in self.slots:
-                    self.var_labs[batch][day][s] = self.model.NewIntVar(-1, self.num_lab_units - 1, f'Lab_{batch}_{day}_{s}')
-
-        # 2. Lunch Constraint
-        print("Adding Lunch Constraints...")
-        if self.lunch_slot_idx is not None:
+    def build_model(self):
+        log_print("\n" + "="*60)
+        log_print("Building Batch-Enabled Model...")
+        log_print("="*60)
+        
+        try:
+            # 1. Variables
+            log_print("\n[STEP 1/8] Creating Variables...")
+            log_print(f"  - Lecture units: {self.num_lecture_units}")
+            log_print(f"  - Lab units: {self.num_lab_units}")
+            log_print(f"  - Divisions: {len(self.divisions)}")
+            log_print(f"  - Batches: {len(self.all_batches)}")
+            log_print(f"  - Days: {len(self.days)}")
+            log_print(f"  - Slots per day: {len(self.slots)}")
+            
+            # A. Lectures: x_div[div][day][slot] -> Lecture Unit Index
             for div in self.divisions:
+                self.var_lectures[div] = {}
                 for day in self.days:
-                    self.model.Add(self.var_lectures[div][day][self.lunch_slot_idx] == -1)
+                    self.var_lectures[div][day] = {}
+                    for s in self.slots:
+                        self.var_lectures[div][day][s] = self.model.NewIntVar(-1, self.num_lecture_units - 1, f'Lec_{div}_{day}_{s}')
+
+            # B. Labs: x_batch[batch][day][slot] -> Lab Unit Index
+            log_print("  ✓ Created lecture variables")
             for batch in self.all_batches:
+                self.var_labs[batch] = {}
                 for day in self.days:
-                    self.model.Add(self.var_labs[batch][day][self.lunch_slot_idx] == -1)
+                    self.var_labs[batch][day] = {}
+                    for s in self.slots:
+                        self.var_labs[batch][day][s] = self.model.NewIntVar(-1, self.num_lab_units - 1, f'Lab_{batch}_{day}_{s}')
+            log_print("  ✓ Created lab variables")
 
-        # 3. Hierarchy Constraint: If Division has Lecture, Batches cannot have Lab
-        print("Adding Hierarchy Constraints...")
-        for div in self.divisions:
-            batches = self.div_to_batches[div]
-            for day in self.days:
-                for s in self.slots:
-                    lec_var = self.var_lectures[div][day][s]
-                    is_lecture = self.model.NewBoolVar(f'is_lec_{div}_{day}_{s}')
-                    self.model.Add(lec_var != -1).OnlyEnforceIf(is_lecture)
-                    self.model.Add(lec_var == -1).OnlyEnforceIf(is_lecture.Not())
-                    
-                    for b in batches:
-                        lab_var = self.var_labs[b][day][s]
-                        # If Lecture is ON, Lab must be OFF (-1)
-                        self.model.Add(lab_var == -1).OnlyEnforceIf(is_lecture)
+            # 2. Lunch Constraint
+            log_print("\n[STEP 2/8] Adding Lunch Constraints...")
+            if self.lunch_slot_idx is not None:
+                log_print(f"  - Lunch slot index: {self.lunch_slot_idx}")
+                constraint_count = 0
+                for div in self.divisions:
+                    for day in self.days:
+                        self.model.Add(self.var_lectures[div][day][self.lunch_slot_idx] == -1)
+                        constraint_count += 1
+                for batch in self.all_batches:
+                    for day in self.days:
+                        self.model.Add(self.var_labs[batch][day][self.lunch_slot_idx] == -1)
+                        constraint_count += 1
+                log_print(f"  ✓ Added {constraint_count} lunch constraints")
+            else:
+                log_print("  - No lunch slot configured")
 
-        # 4. Division Constraints (Lectures)
-        print("Adding Lecture Constraints...")
-        for div in self.divisions:
-            self._add_lecture_constraints(div)
+            # 2b. Fixed lecture slots (optional) - OPTIMIZED
+            log_print("\n[STEP 2b/8] Adding Fixed Lecture Slot Constraints...")
+            if getattr(self, "fixed_lecture_slots", None):
+                log_print(f"  - Fixed subjects: {list(self.fixed_lecture_slots.keys())}")
+                constraint_count = 0
+                for div in self.divisions:
+                    for subject, occs in self.fixed_lecture_slots.items():
+                        unit_indices = self.subj_to_lecture_indices.get(subject, [])
+                        if not unit_indices:
+                            raise ValueError(f"Fixed subject {subject!r} not found in lecture units.")
+                        print(f"    - {subject}: {len(occs)} fixed slots, {len(unit_indices)} unit indices")
+                        # Use AddAllowedAssignments for fixed slots (efficient for small domains)
+                        allowed = [[u] for u in unit_indices]
+                        for day, slot_idx in occs:
+                            var = self.var_lectures[div][day][slot_idx]
+                            # Force this slot to be this subject (teacher chosen by solver)
+                            self.model.AddAllowedAssignments([var], allowed)
+                            # Ensure it's not empty
+                            self.model.Add(var != -1)
+                            constraint_count += 2
+                log_print(f"  ✓ Added {constraint_count} fixed slot constraints")
+            else:
+                log_print("  - No fixed slots configured")
 
-        # 5. Batch Constraints (Labs)
-        print("Adding Lab Constraints...")
-        for batch in self.all_batches:
-            self._add_lab_constraints(batch)
+            # 3. Hierarchy Constraint: If Division has Lecture, Batches cannot have Lab
+            log_print("\n[STEP 3/8] Adding Hierarchy Constraints...")
+            constraint_count = 0
+            for div in self.divisions:
+                batches = self.div_to_batches[div]
+                for day in self.days:
+                    for s in self.slots:
+                        lec_var = self.var_lectures[div][day][s]
+                        is_lecture = self.model.NewBoolVar(f'is_lec_{div}_{day}_{s}')
+                        self.model.Add(lec_var != -1).OnlyEnforceIf(is_lecture)
+                        self.model.Add(lec_var == -1).OnlyEnforceIf(is_lecture.Not())
+                        constraint_count += 2
+                        
+                        for b in batches:
+                            lab_var = self.var_labs[b][day][s]
+                            # If Lecture is ON, Lab must be OFF (-1)
+                            self.model.Add(lab_var == -1).OnlyEnforceIf(is_lecture)
+                            constraint_count += 1
+            log_print(f"  ✓ Added {constraint_count} hierarchy constraints")
 
-        # 6. Resource Constraints (Teachers & Rooms)
-        print("Adding Resource Constraints...")
-        self._add_resource_constraints()
+            # 4. Division Constraints (Lectures)
+            log_print("\n[STEP 4/8] Adding Lecture Constraints...")
+            for div in self.divisions:
+                log_print(f"  - Processing division: {div}")
+                try:
+                    self._add_lecture_constraints(div)
+                    log_print(f"    ✓ {div} lecture constraints added")
+                except Exception as e:
+                    log_print(f"    ✗ ERROR in {div} lecture constraints: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    raise
 
-        # 7. Synchronization Constraints
-        print("Adding Lab Synchronization Constraints...")
-        self._add_lab_synchronization()
+            # 5. Batch Constraints (Labs)
+            log_print("\n[STEP 5/8] Adding Lab Constraints...")
+            processed = 0
+            for batch in self.all_batches:
+                try:
+                    self._add_lab_constraints(batch)
+                    processed += 1
+                    if processed % 4 == 0:  # Print every 4 batches
+                        log_print(f"  - Processed {processed}/{len(self.all_batches)} batches...")
+                except Exception as e:
+                    log_print(f"    ✗ ERROR in batch {batch} lab constraints: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    raise
+            log_print(f"  ✓ Added lab constraints for all {len(self.all_batches)} batches")
 
-        # 8. Objective
-        print("Adding Objective...")
-        self._add_objective()
+            # 6. Resource Constraints (Teachers & Rooms)
+            log_print("\n[STEP 6/8] Adding Resource Constraints...")
+            log_print(f"  - Teachers: {len(self.teacher_to_units)}")
+            log_print(f"  - Rooms: {len(self.room_to_units)}")
+            try:
+                self._add_resource_constraints()
+                log_print("  ✓ Resource constraints added")
+            except Exception as e:
+                log_print(f"    ✗ ERROR in resource constraints: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
+
+            # 7. Synchronization Constraints
+            log_print("\n[STEP 7/8] Adding Lab Synchronization Constraints...")
+            try:
+                self._add_lab_synchronization()
+                log_print("  ✓ Lab synchronization constraints added")
+            except Exception as e:
+                log_print(f"    ✗ ERROR in lab synchronization constraints: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
+
+            # 8. Objective
+            log_print("\n[STEP 8/8] Adding Objective...")
+            try:
+                self._add_objective()
+                log_print("  ✓ Objective added (or skipped)")
+            except Exception as e:
+                log_print(f"    ✗ ERROR in objective: {e}")
+                import traceback
+                traceback.print_exc()
+                raise
+            
+            log_print("\n" + "="*60)
+            log_print("✓ Model building completed successfully!")
+            log_print("="*60 + "\n")
+            
+        except Exception as e:
+            log_print("\n" + "="*60)
+            log_print(f"✗ ERROR during model building: {e}")
+            log_print("="*60)
+            import traceback
+            traceback.print_exc()
+            raise
 
     def _add_lecture_constraints(self, div):
         for subject in self.raw_lectures:
-            if subject not in self.frequencies: continue
+            if subject not in self.frequencies: 
+                print(f"    Warning: Subject {subject} has no frequency, skipping")
+                continue
             freq = self.frequencies[subject]
             unit_indices = self.subj_to_lecture_indices[subject]
+            
+            if not unit_indices:
+                print(f"    Warning: Subject {subject} has no unit indices, skipping")
+                continue
             
             # Group unit indices by teacher to ensure one teacher per division-subject
             teacher_to_unit_indices = {}
@@ -363,11 +646,16 @@ class TimetableScheduler:
 
     def _add_lab_constraints(self, batch):
         for subject in self.raw_labs:
-            if subject not in self.frequencies: continue
+            if subject not in self.frequencies: 
+                continue
             freq = self.frequencies[subject]
             num_sessions = freq
             
             unit_indices = self.subj_to_lab_indices[subject]
+            
+            if not unit_indices:
+                log_print(f"    Warning: Lab subject {subject} has no unit indices for batch {batch}, skipping")
+                continue
             
             # Group unit indices by teacher to ensure one teacher per batch-subject
             teacher_to_unit_indices = {}
@@ -421,6 +709,8 @@ class TimetableScheduler:
             self.model.Add(sum(all_starts) == num_sessions)
 
             # Reverse: Occupy => Start at s OR Start at s-1
+            # OPTIMIZED: Only add reverse constraints for slots that can actually be occupied
+            # The forward constraints already ensure starts are valid, so we can simplify
             for day in self.days:
                 for s in self.slots:
                     if s == self.lunch_slot_idx: continue
@@ -432,104 +722,146 @@ class TimetableScheduler:
                         if teacher not in teacher_selected:
                             continue
                         
-                        # If var == u_idx, then...
-                        # It could be a start at s: starts_at.get((day, s, u_idx))
-                        # OR a start at s-1: starts_at.get((day, s-1, u_idx))
-                        
+                        # Check if this slot can be occupied by this unit
                         potential_causes = []
                         if (day, s, u_idx) in starts_at:
                             potential_causes.append(starts_at[(day, s, u_idx)])
-                        if (day, s-1, u_idx) in starts_at:
+                        if s > 0 and (day, s-1, u_idx) in starts_at:
                             potential_causes.append(starts_at[(day, s-1, u_idx)])
                         
                         if potential_causes:
-                            # var == u_idx  ==>  sum(causes) >= 1
-                            # equivalent: var != u_idx OR sum(causes) >= 1
-                            # easier: OnlyEnforceIf(var == u_idx) -> sum(causes) >= 1
+                            # Simplified: if var == u_idx, then at least one cause must be true
+                            # Use direct implication instead of creating is_assigned boolean
+                            var = self.var_labs[batch][day][s]
+                            # var == u_idx => sum(potential_causes) >= 1
+                            # This is equivalent to: var != u_idx OR sum(potential_causes) >= 1
+                            # Use OnlyEnforceIf for efficiency
+                            if len(potential_causes) == 1:
+                                # Simple case: var == u_idx => cause must be true
+                                self.model.Add(var != u_idx).OnlyEnforceIf(potential_causes[0].Not())
+                            else:
+                                # Multiple causes: var == u_idx => at least one cause is true
+                                # Create a single boolean for "var == u_idx"
+                                var_equals = self.model.NewBoolVar(f'var_eq_{batch}_{day}_{s}_{u_idx}')
+                                self.model.Add(var == u_idx).OnlyEnforceIf(var_equals)
+                                self.model.Add(var != u_idx).OnlyEnforceIf(var_equals.Not())
+                                # If var equals u_idx, at least one cause must be true
+                                self.model.Add(sum(potential_causes) >= 1).OnlyEnforceIf(var_equals)
                             
-                            is_assigned = self.model.NewBoolVar(f'is_assigned_{batch}_{day}_{s}_{u_idx}')
-                            self.model.Add(self.var_labs[batch][day][s] == u_idx).OnlyEnforceIf(is_assigned)
-                            self.model.Add(self.var_labs[batch][day][s] != u_idx).OnlyEnforceIf(is_assigned.Not())
-                            
-                            # If assigned, then one of the causes must be true
-                            self.model.Add(sum(potential_causes) >= 1).OnlyEnforceIf(is_assigned)
-                            
-                            # Also ensure teacher is selected if this unit is assigned
-                            self.model.Add(is_assigned == 0).OnlyEnforceIf(teacher_selected[teacher].Not())
+                            # Ensure teacher is selected
+                            self.model.Add(var != u_idx).OnlyEnforceIf(teacher_selected[teacher].Not())
                         else:
-                            # If no potential starts cover this slot (e.g. lunch edge cases?), then it CANNOT be assigned
+                            # If no potential starts cover this slot, it CANNOT be assigned
                             self.model.Add(self.var_labs[batch][day][s] != u_idx)
 
     def _add_resource_constraints(self):
-        # 1. Teachers
+        # 1. Teachers - OPTIMIZED: Use AddAtMostOne with minimal booleans
         for teacher, units in self.teacher_to_units.items():
             if teacher == "Staff": continue
             
+            # Pre-calculate relevant indices
+            relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
+            relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
+            
+            if not relevant_lec_indices and not relevant_lab_indices:
+                continue
+            
             for day in self.days:
                 for s in self.slots:
-                    # Gather all booleans where this teacher is active
-                    active_bools = []
+                    # Gather booleans: is this teacher busy at this slot?
+                    teacher_busy_vars = []
                     
-                    # A. Lectures
-                    for div in self.divisions:
-                        var = self.var_lectures[div][day][s]
-                        # Is var assigned to any unit taught by this teacher?
-                        # Optimization: Pre-calculate relevant indices
-                        relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
-                        if relevant_lec_indices:
-                            # Create a bool that is true if var is in relevant_indices
-                            # Since domain is small, we can iterate
+                    # A. Lectures - one boolean per division
+                    if relevant_lec_indices:
+                        for div in self.divisions:
+                            var = self.var_lectures[div][day][s]
+                            teacher_busy = self.model.NewBoolVar(f't_busy_{teacher}_{div}_{day}_{s}_lec')
+                            # teacher_busy <=> (var in relevant_lec_indices)
+                            # Create OR constraint: var == idx1 OR var == idx2 OR ...
+                            or_conditions = []
                             for idx in relevant_lec_indices:
-                                b = self.model.NewBoolVar(f't_busy_lec_{teacher}_{div}_{day}_{s}_{idx}')
-                                self.model.Add(var == idx).OnlyEnforceIf(b)
-                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
-                                active_bools.append(b)
+                                eq = self.model.NewBoolVar(f'eq_{teacher}_{div}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(eq)
+                                self.model.Add(var != idx).OnlyEnforceIf(eq.Not())
+                                or_conditions.append(eq)
+                            # teacher_busy is true if any condition is true
+                            if or_conditions:
+                                self.model.AddBoolOr(or_conditions).OnlyEnforceIf(teacher_busy)
+                                # teacher_busy is false if all conditions are false
+                                self.model.AddBoolAnd([c.Not() for c in or_conditions]).OnlyEnforceIf(teacher_busy.Not())
+                            teacher_busy_vars.append(teacher_busy)
 
-                    # B. Labs
-                    for batch in self.all_batches:
-                        var = self.var_labs[batch][day][s]
-                        relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
-                        if relevant_lab_indices:
+                    # B. Labs - one boolean per batch
+                    if relevant_lab_indices:
+                        for batch in self.all_batches:
+                            var = self.var_labs[batch][day][s]
+                            teacher_busy = self.model.NewBoolVar(f't_busy_{teacher}_{batch}_{day}_{s}_lab')
+                            or_conditions = []
                             for idx in relevant_lab_indices:
-                                b = self.model.NewBoolVar(f't_busy_lab_{teacher}_{batch}_{day}_{s}_{idx}')
-                                self.model.Add(var == idx).OnlyEnforceIf(b)
-                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
-                                active_bools.append(b)
+                                eq = self.model.NewBoolVar(f'eq_{teacher}_{batch}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(eq)
+                                self.model.Add(var != idx).OnlyEnforceIf(eq.Not())
+                                or_conditions.append(eq)
+                            if or_conditions:
+                                self.model.AddBoolOr(or_conditions).OnlyEnforceIf(teacher_busy)
+                                self.model.AddBoolAnd([c.Not() for c in or_conditions]).OnlyEnforceIf(teacher_busy.Not())
+                            teacher_busy_vars.append(teacher_busy)
                     
                     # Constraint: At most 1 active assignment
-                    if active_bools:
-                        self.model.Add(sum(active_bools) <= 1)
+                    if len(teacher_busy_vars) > 1:
+                        self.model.AddAtMostOne(teacher_busy_vars)
 
-        # 2. Rooms
+        # 2. Rooms - OPTIMIZED: Similar to teachers
+        # Skip room constraints for "Unassigned" rooms - they don't need conflict checking
         for room, units in self.room_to_units.items():
+            # Skip unassigned rooms - they don't have physical constraints
+            if room == "Unassigned" or room == "AnyRoom":
+                continue
+                
+            relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
+            relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
+            
+            if not relevant_lec_indices and not relevant_lab_indices:
+                continue
+            
             for day in self.days:
                 for s in self.slots:
                     occupied_bools = []
                     
-                    # A. Lectures
-                    relevant_lec_indices = [idx for (t, idx) in units if t == 'lec']
+                    # A. Lectures - one boolean per division
                     if relevant_lec_indices:
                         for div in self.divisions:
                             var = self.var_lectures[div][day][s]
+                            room_occ = self.model.NewBoolVar(f'r_occ_{room}_{div}_{day}_{s}_lec')
+                            or_conditions = []
                             for idx in relevant_lec_indices:
-                                b = self.model.NewBoolVar(f'r_occ_lec_{room}_{div}_{day}_{s}_{idx}')
-                                self.model.Add(var == idx).OnlyEnforceIf(b)
-                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
-                                occupied_bools.append(b)
+                                eq = self.model.NewBoolVar(f'room_eq_{room}_{div}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(eq)
+                                self.model.Add(var != idx).OnlyEnforceIf(eq.Not())
+                                or_conditions.append(eq)
+                            if or_conditions:
+                                self.model.AddBoolOr(or_conditions).OnlyEnforceIf(room_occ)
+                                self.model.AddBoolAnd([c.Not() for c in or_conditions]).OnlyEnforceIf(room_occ.Not())
+                            occupied_bools.append(room_occ)
                     
-                    # B. Labs
-                    relevant_lab_indices = [idx for (t, idx) in units if t == 'lab']
+                    # B. Labs - one boolean per batch
                     if relevant_lab_indices:
                         for batch in self.all_batches:
                             var = self.var_labs[batch][day][s]
+                            room_occ = self.model.NewBoolVar(f'r_occ_{room}_{batch}_{day}_{s}_lab')
+                            or_conditions = []
                             for idx in relevant_lab_indices:
-                                b = self.model.NewBoolVar(f'r_occ_lab_{room}_{batch}_{day}_{s}_{idx}')
-                                self.model.Add(var == idx).OnlyEnforceIf(b)
-                                self.model.Add(var != idx).OnlyEnforceIf(b.Not())
-                                occupied_bools.append(b)
+                                eq = self.model.NewBoolVar(f'room_eq_{room}_{batch}_{day}_{s}_{idx}')
+                                self.model.Add(var == idx).OnlyEnforceIf(eq)
+                                self.model.Add(var != idx).OnlyEnforceIf(eq.Not())
+                                or_conditions.append(eq)
+                            if or_conditions:
+                                self.model.AddBoolOr(or_conditions).OnlyEnforceIf(room_occ)
+                                self.model.AddBoolAnd([c.Not() for c in or_conditions]).OnlyEnforceIf(room_occ.Not())
+                            occupied_bools.append(room_occ)
                     
-                    if occupied_bools:
-                        self.model.Add(sum(occupied_bools) <= 1)
+                    if len(occupied_bools) > 1:
+                        self.model.AddAtMostOne(occupied_bools)
 
     def _add_division_lab_teacher_consistency(self):
         """
@@ -708,15 +1040,84 @@ class TimetableScheduler:
         pass
 
     def solve(self):
-        print("Solving...")
+        log_print("\n" + "="*60)
+        log_print("SOLVING...")
+        log_print("="*60)
+        
+        # Optimize solver parameters for faster solving
         self.solver.parameters.max_time_in_seconds = 300
         self.solver.parameters.num_search_workers = 8
-        self.solve_status = self.solver.Solve(self.model, TimetableSolutionPrinter(5))
+        # Use linear scan for better performance
+        self.solver.parameters.search_branching = cp_model.PORTFOLIO_SEARCH
+        # Enable presolve
+        self.solver.parameters.cp_model_presolve = True
+        # Reduce logging for speed
+        self.solver.parameters.log_search_progress = False
+        # Use faster heuristics
+        self.solver.parameters.use_optional_variables = True
+        
+        log_print(f"Max time: {self.solver.parameters.max_time_in_seconds}s")
+        log_print(f"Workers: {self.solver.parameters.num_search_workers}")
+        log_print("Starting solver...")
+        
+        start_time = time.time()
+        try:
+            self.solve_status = self.solver.Solve(self.model, TimetableSolutionPrinter(5))
+        except Exception as e:
+            log_print(f"\n✗ SOLVER CRASHED: {e}")
+            import traceback
+            traceback.print_exc()
+            self.solve_status = cp_model.MODEL_INVALID
+            raise
+        
+        elapsed_time = time.time() - start_time
+        
+        log_print("\n" + "="*60)
+        log_print("SOLVE COMPLETED")
+        log_print("="*60)
+        log_print(f"Status: {self.solve_status}")
+        log_print(f"Time elapsed: {elapsed_time:.2f} seconds")
+        
+        # Detailed status information
+        status_map = {
+            cp_model.OPTIMAL: "OPTIMAL - Best solution found",
+            cp_model.FEASIBLE: "FEASIBLE - A solution was found",
+            cp_model.INFEASIBLE: "INFEASIBLE - No solution exists (constraints conflict)",
+            cp_model.MODEL_INVALID: "MODEL_INVALID - Model has errors",
+            cp_model.UNKNOWN: "UNKNOWN - Could not determine status",
+        }
+        
+        status_name = status_map.get(self.solve_status, f"UNKNOWN_STATUS_{self.solve_status}")
+        log_print(f"Status meaning: {status_name}")
+        
+        if self.solve_status == cp_model.INFEASIBLE:
+            log_print("\n⚠️  PROBLEM IS INFEASIBLE!")
+            log_print("This means your constraints cannot be satisfied together.")
+            log_print("Common causes:")
+            log_print("  - Too many fixed slots conflicting with other constraints")
+            log_print("  - Teacher/room availability too limited")
+            log_print("  - Frequency requirements too high for available slots")
+            log_print("  - Conflicts between division and batch constraints")
+            
+            # Try to get more info about infeasibility
+            log_print("\nAttempting to get infeasibility information...")
+            try:
+                # OR-Tools doesn't provide detailed conflict analysis by default
+                # But we can check what might be wrong
+                log_print("Check:")
+                log_print("  - Are all subjects assigned to teachers in teachers.json?")
+                log_print("  - Do fixed slots overlap with lunch slots?")
+                log_print("  - Are frequency requirements reasonable?")
+            except:
+                pass
+        
+        log_print("="*60 + "\n")
+        
         return self.solve_status
 
     def export_solution(self, filename="timetable_full.json"):
         if self.solve_status is None or self.solve_status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-            print("No solution.")
+            log_print("No solution to export.")
             return
 
         full_data = {}
@@ -820,7 +1221,7 @@ class TimetableScheduler:
 
         with open(filename, "w") as f:
             json.dump(timetable_json, f, indent=4)
-        print(f"\nSaved to {filename}")
+        log_print(f"\n✓ Saved timetable to {filename}")
 
 if __name__ == "__main__":
     scheduler = TimetableScheduler()

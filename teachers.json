@@ -24,9 +24,7 @@
   "Kavita Kolpe": [
     "DEVL"
   ],
-  "Madhuri Suryavanshi": [
-    "GenAI"
-  ],
+  "Madhuri Suryavanshi": [],
   "Manjusha Devkute": [
     "UHV"
   ],
@@ -44,12 +42,8 @@
   "Priyadarshani Ranbhise": [
     "BSFE"
   ],
-  "Puja Pohakar": [
-    "GenAI"
-  ],
-  "SI": [
-    "GenAI"
-  ],
+  "Puja Pohakar": [],
+  "SI": [],
   "Saziya Sheikh": [
     "SDAUR"
   ],
@@ -66,10 +60,6 @@
     "DSA",
     "DSAL"
   ],
-  "Tushar Kute": [
-    "Kotlin"
-  ],
-  "YS": [
-    "GenAI"
-  ]
+  "Tushar Kute": [],
+  "YS": []
 }
