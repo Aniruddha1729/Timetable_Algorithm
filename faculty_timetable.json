@@ -1,0 +1,3226 @@
+{
+    "Saziya Sheikh": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "Sonika Gill": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "Spatil": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "UHV",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "NG": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "Priyadarshani Ranbhise": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "BSFE",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "Ashwini Matange": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-A"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            }
+        ]
+    },
+    "Swati Chandurkar": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A1"
+            }
+        ]
+    },
+    "Asmita Manna": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6205",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            }
+        ]
+    },
+    "Kavita Kolpe": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-A4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            }
+        ]
+    },
+    "Dhanashree Patil": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-D1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A2"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "PS": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-C3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-D4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-D2"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "MA",
+                "room": "6201",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6218",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "MAL",
+                "room": "6219",
+                "type": "LAB",
+                "batches": "DIV-C2"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    },
+    "Aparna Joshi": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6211",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6210",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DSA",
+                "room": "6203",
+                "type": "LECTURE",
+                "batches": "DIV-B"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DSAL",
+                "room": "6206",
+                "type": "LAB",
+                "batches": "DIV-A3"
+            }
+        ]
+    },
+    "Abhishek Raut": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9001",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-B4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-C4"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B1"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9002",
+                "type": "LAB",
+                "batches": "DIV-B3"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-B2"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "9005",
+                "type": "LAB",
+                "batches": "DIV-D3"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "DEVL",
+                "room": "90001",
+                "type": "LAB",
+                "batches": "DIV-C1"
+            }
+        ]
+    },
+    "Sushma Parmar": {
+        "Mon": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            }
+        ],
+        "Tue": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-D"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Wed": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Thu": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "FREE"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ],
+        "Fri": [
+            {
+                "time": "9:00 - 10:00",
+                "status": "FREE"
+            },
+            {
+                "time": "10:00 - 11:00",
+                "status": "FREE"
+            },
+            {
+                "time": "11:00 - 12:00",
+                "status": "BUSY",
+                "subject": "SDAUR",
+                "room": "6405",
+                "type": "LECTURE",
+                "batches": "DIV-C"
+            },
+            {
+                "time": "12:00 - 13:00",
+                "status": "FREE"
+            },
+            {
+                "time": "13:00 - 14:00",
+                "status": "FREE"
+            },
+            {
+                "time": "14:00 - 15:00",
+                "status": "FREE"
+            },
+            {
+                "time": "15:00 - 16:00",
+                "status": "FREE"
+            },
+            {
+                "time": "16:00 - 17:00",
+                "status": "FREE"
+            }
+        ]
+    }
+}

@@ -11,6 +11,10 @@ from ortools.sat.python import cp_model
 # 🔹 IMPORT PDF GENERATOR
 from generate_pdf import generate_pdf
 
+# 🔹 IMPORT ALGORITHM MODULES
+from generate_free_slots import main as generate_free_slots_main
+from generate_faculty_timttable import main as generate_faculty_timetable_main
+
 app = FastAPI()
 
 # -----------------------------
@@ -163,6 +167,94 @@ def generate_pdf_api():
         media_type="application/pdf",
         filename="timetable.pdf"
     )
+
+
+# -----------------------------
+# 🆕 Generate Free Slots
+# -----------------------------
+@app.post("/generate-free-slots")
+def generate_free_slots_api():
+    """
+    Generates free room slots based on timetable_full.json
+    Returns: JSON with free slots for each room by day
+    """
+    if not os.path.exists("timetable_full.json"):
+        raise HTTPException(
+            status_code=400,
+            detail="Timetable not generated yet. Please generate timetable first."
+        )
+    
+    if not os.path.exists("rooms.json"):
+        raise HTTPException(
+            status_code=400,
+            detail="rooms.json not found"
+        )
+    
+    if not os.path.exists("config.json"):
+        raise HTTPException(
+            status_code=400,
+            detail="config.json not found"
+        )
+
+    try:
+        # Run the algorithm
+        generate_free_slots_main()
+        
+        # Read the generated output
+        with open("free_slots.json") as f:
+            result = json.load(f)
+            
+        print("✓ Successfully generated free slots")
+        return {"free_slots": result}
+        
+    except Exception as e:
+        print(f"✗ Error in /generate-free-slots endpoint: {e}")
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail=f"Free slots generation failed: {str(e)}"
+        )
+
+
+# -----------------------------
+# 🆕 Generate Faculty Timetable
+# -----------------------------
+@app.post("/generate-faculty-timetable")
+def generate_faculty_timetable_api():
+    """
+    Generates faculty/teacher timetables based on timetable_full.json
+    Returns: JSON with schedule for each teacher by day
+    """
+    if not os.path.exists("timetable_full.json"):
+        raise HTTPException(
+            status_code=400,
+            detail="Timetable not generated yet. Please generate timetable first."
+        )
+    
+    if not os.path.exists("config.json"):
+        raise HTTPException(
+            status_code=400,
+            detail="config.json not found"
+        )
+
+    try:
+        # Run the algorithm
+        generate_faculty_timetable_main()
+        
+        # Read the generated output
+        with open("faculty_timetable.json") as f:
+            result = json.load(f)
+            
+        print("✓ Successfully generated faculty timetable")
+        return {"faculty_timetable": result}
+        
+    except Exception as e:
+        print(f"✗ Error in /generate-faculty-timetable endpoint: {e}")
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=500,
+            detail=f"Faculty timetable generation failed: {str(e)}"
+        )
 
 
 # -----------------------------
