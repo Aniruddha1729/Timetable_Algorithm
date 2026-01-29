@@ -1,3 +1,5 @@
+#alllalalalalalla
+
 # TimeTable Scheduler Algorithm
 
 A powerful, constraint-based timetable scheduling system built with Python and Google OR-Tools. This system generates conflict-free schedules for colleges/universities, handling complex requirements like division-level lectures, batch-level labs, and parallel sessions.
